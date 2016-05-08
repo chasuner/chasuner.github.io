@@ -61,6 +61,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-longest-substring-with-at-most-k-distinct-characters" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/08/longest-substring-with-at-most-k-distinct-characters/" class="article-date">
+  <time datetime="2016-05-08T15:51:37.000Z" itemprop="datePublished">2016-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/08/longest-substring-with-at-most-k-distinct-characters/">340. Longest Substring with At Most K Distinct Characters</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given a string, find the length of the longest substring T that contains at most k distinct characters.</p>
+<p>For example, Given s = <code>“eceba”</code> and k = 2,</p>
+<p>T is “ece” which its length is 3.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(n)</span></span><br><span class="line"><span class="comment"># Space: O(1)</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLongestSubstringKDistinct</span><span class="params">(self, s, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type s: str</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s <span class="keyword">or</span> k &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        cmap, b, res = &#123;&#125;, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(s)):</span><br><span class="line">            <span class="keyword">if</span> s[i] <span class="keyword">not</span> <span class="keyword">in</span> cmap:</span><br><span class="line">                cmap[s[i]] = <span class="number">0</span></span><br><span class="line">            cmap[s[i]] += <span class="number">1</span></span><br><span class="line">            count = len(cmap)</span><br><span class="line">            <span class="keyword">while</span> count &gt; k:</span><br><span class="line">                cmap[s[b]] -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> cmap[s[b]] == <span class="number">0</span>:</span><br><span class="line">                    count -= <span class="number">1</span></span><br><span class="line">                    <span class="keyword">del</span> cmap[s[b]]</span><br><span class="line">            res = max(res, i - b + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/08/longest-substring-with-at-most-k-distinct-characters/" data-id="cinys1exm000611o9vjszegvj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode-algorithms/">leetcode; algorithms</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-design-tic-tac-toe" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/08/design-tic-tac-toe/" class="article-date">
@@ -97,10 +139,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/08/design-tic-tac-toe/" data-id="cinyqw8880000vpo9e6avyrio" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/08/design-tic-tac-toe/" data-id="cinys1ex4000011o980hjhy4s" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode-algorithms/">leetcode, algorithms</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode-algorithms/">leetcode; algorithms</a></li></ul>
 
     </footer>
   </div>
@@ -141,10 +183,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/02/top-k-frequent-elements/" data-id="cinyqw88f0003vpo9scvkup2a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/02/top-k-frequent-elements/" data-id="cinys1exg000311o9ynyqoyq8" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode-algorithms/">leetcode, algorithms</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode-algorithms/">leetcode; algorithms</a></li></ul>
 
     </footer>
   </div>
@@ -179,7 +221,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/30/march/" data-id="cinyqw88j0005vpo9amqlmmzt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/03/30/march/" data-id="cinys1exl000511o9owsqjvjs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -224,7 +266,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/30/hello-world/" data-id="cinyqw88l0006vpo9yycyaly7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/03/30/hello-world/" data-id="cinys1ez5000811o9nxz3gzbp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -245,7 +287,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode-algorithms/">leetcode, algorithms</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode-algorithms/">leetcode; algorithms</a><span class="tag-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -254,7 +296,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/leetcode-algorithms/" style="font-size: NaNpx;">leetcode, algorithms</a>
+      <a href="/tags/leetcode-algorithms/" style="font-size: NaNpx;">leetcode; algorithms</a>
     </div>
   </div>
 
@@ -263,7 +305,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -273,6 +315,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/05/08/longest-substring-with-at-most-k-distinct-characters/">340. Longest Substring with At Most K Distinct Characters</a>
+          </li>
         
           <li>
             <a href="/2016/05/08/design-tic-tac-toe/">design-tic-tac-toe</a>
