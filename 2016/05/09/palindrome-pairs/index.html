@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>330. Patching Array | Hexo</title>
+  <title>336. Palindrome Pairs | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Given a sorted positive integer array nums and an integer n, add/patch elements to the array such that any number in range [1, n] inclusive can be formed by the sum of some elements in the array. Retu">
+  <meta name="description" content="Given a list of unique words. Find all pairs of distinct indices (i, j) in the given list, so that the concatenation of the two words, i.e. words[i] + words[j] is a palindrome.
+Example 1:Given words =">
 <meta property="og:type" content="article">
-<meta property="og:title" content="330. Patching Array">
-<meta property="og:url" content="http://yoursite.com/2016/05/09/patching-array/index.html">
+<meta property="og:title" content="336. Palindrome Pairs">
+<meta property="og:url" content="http://yoursite.com/2016/05/09/palindrome-pairs/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Given a sorted positive integer array nums and an integer n, add/patch elements to the array such that any number in range [1, n] inclusive can be formed by the sum of some elements in the array. Retu">
+<meta property="og:description" content="Given a list of unique words. Find all pairs of distinct indices (i, j) in the given list, so that the concatenation of the two words, i.e. words[i] + words[j] is a palindrome.
+Example 1:Given words =">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="330. Patching Array">
-<meta name="twitter:description" content="Given a sorted positive integer array nums and an integer n, add/patch elements to the array such that any number in range [1, n] inclusive can be formed by the sum of some elements in the array. Retu">
+<meta name="twitter:title" content="336. Palindrome Pairs">
+<meta name="twitter:description" content="Given a list of unique words. Find all pairs of distinct indices (i, j) in the given list, so that the concatenation of the two words, i.e. words[i] + words[j] is a palindrome.
+Example 1:Given words =">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,10 +62,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-patching-array" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-palindrome-pairs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/09/patching-array/" class="article-date">
-  <time datetime="2016-05-09T04:19:16.000Z" itemprop="datePublished">2016-05-09</time>
+    <a href="/2016/05/09/palindrome-pairs/" class="article-date">
+  <time datetime="2016-05-09T12:25:25.000Z" itemprop="datePublished">2016-05-09</time>
 </a>
     
   </div>
@@ -73,7 +76,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      330. Patching Array
+      336. Palindrome Pairs
     </h1>
   
 
@@ -81,18 +84,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Given a sorted positive integer array nums and an integer n, add/patch elements to the array such that any number in range <code>[1, n]</code> inclusive can be formed by the sum of some elements in the array. Return the minimum number of patches required.</p>
-<p>Example 1:<br>nums = <code>[1, 3]</code>, n = <code>6</code><br>Return <code>1</code>.</p>
-<p>Combinations of nums are <code>[1], [3], [1,3]</code>, which form possible sums of: <code>1, 3, 4</code>.<br>Now if we add/patch <code>2</code> to nums, the combinations are: <code>[1], [2], [3], [1,3], [2,3], [1,2,3]</code>.<br>Possible sums are <code>1, 2, 3, 4, 5, 6</code>, which now covers the range <code>[1, 6]</code>.<br>So we only need <code>1</code> patch.</p>
-<p>Example 2:<br>nums = <code>[1, 5, 10]</code>, n = <code>20</code><br>Return <code>2</code>.<br>The two patches can be <code>[2, 4]</code>.</p>
-<p>Example 3:<br>nums = <code>[1, 2, 2]</code>, n = <code>5</code><br>Return <code>0</code>.</p>
-<p>思路:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(s + logn), s is the number of elements in the array</span></span><br><span class="line"><span class="comment"># Space: O(1)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minPatches</span><span class="params">(self, nums, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type n: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        res, a, i = <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> a &lt;= n:</span><br><span class="line">            <span class="keyword">if</span> i &lt; len(nums) <span class="keyword">and</span> nums[i] &lt;= a:</span><br><span class="line">                a += nums[i]</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                a += a</span><br><span class="line">                res += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+        <p>Given a list of unique words. Find all pairs of distinct indices <code>(i, j)</code> in the given list, so that the concatenation of the two words, i.e. <code>words[i] + words[j]</code> is a palindrome.</p>
+<p>Example 1:<br>Given words = <code>[&quot;bat&quot;, &quot;tab&quot;, &quot;cat&quot;]</code><br>Return <code>[[0, 1], [1, 0]]</code><br>The palindromes are <code>[&quot;battab&quot;, &quot;tabbat&quot;]</code><br>Example 2:<br>Given words = <code>[&quot;abcd&quot;, &quot;dcba&quot;, &quot;lls&quot;, &quot;s&quot;, &quot;sssll&quot;]</code><br>Return <code>[[0, 1], [1, 0], [3, 2], [2, 4]]</code><br>The palindromes are <code>[&quot;dcbaabcd&quot;, &quot;abcddcba&quot;, &quot;slls&quot;, &quot;llssssll&quot;]</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">palindromePairs</span><span class="params">(self, words)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type words: List[str]</span><br><span class="line">        :rtype: List[List[int]]</span><br><span class="line">        """</span></span><br><span class="line">        res = []</span><br><span class="line">        res = []</span><br><span class="line">        word_map = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(words)):</span><br><span class="line">            word_map[words[i]] = i</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(words)):</span><br><span class="line">            word = words[i]</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xrange(len(word) + <span class="number">1</span>):</span><br><span class="line">                prefix = word[j:]</span><br><span class="line">                suffix = word[:j]</span><br><span class="line">                <span class="keyword">if</span> j &gt; <span class="number">0</span> <span class="keyword">and</span> suffix == suffix[::-<span class="number">1</span>] <span class="keyword">and</span> word_map.get(prefix[::-<span class="number">1</span>], i) != i:</span><br><span class="line">                    res.append([word_map[prefix[::-<span class="number">1</span>]], i])</span><br><span class="line">                <span class="keyword">if</span> prefix == prefix[::-<span class="number">1</span>] <span class="keyword">and</span> word_map.get(suffix[::-<span class="number">1</span>], i) != i:</span><br><span class="line">                    res.append([i, word_map[suffix[::-<span class="number">1</span>]]])</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/patching-array/" data-id="cio03m4g2000f8lo9pbv1mr6c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/palindrome-pairs/" data-id="cio03m4h3000i8lo9b1yp8i4q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -103,19 +102,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/05/09/count-of-range-sum/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/05/09/self-crossing/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          327. Count of Range Sum
+          335. Self Crossing
         
       </div>
     </a>
   
   
-    <a href="/2016/05/09/verify-preorder-serialization-of-a-binary-tree/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/05/09/count-of-range-sum/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">331. Verify Preorder Serialization of a Binary Tree</div>
+      <div class="article-nav-title">327. Count of Range Sum</div>
     </a>
   
 </nav>

@@ -94,12 +94,12 @@
 <p>Example 2:<br><code>&quot;1,#&quot;</code><br>Return <code>false</code></p>
 <p>Example 3:<br><code>&quot;9,#,#,1&quot;</code><br>Return <code>false</code></p>
 <p>思路:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isValidSerialization</span><span class="params">(self, preorder)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type preorder: str</span><br><span class="line">        :rtype: bool</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> preorder:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        stack = []</span><br><span class="line">        node_list = preorder.split(<span class="string">','</span>)</span><br><span class="line">        <span class="keyword">for</span> node <span class="keyword">in</span> node_list:</span><br><span class="line">        <span class="keyword">if</span> node == <span class="string">'#'</span>:</span><br><span class="line">            <span class="keyword">while</span> len(stack) &gt;= <span class="number">2</span> <span class="keyword">and</span> stack[-<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> stack[-<span class="number">2</span>] != <span class="string">'#'</span>:</span><br><span class="line">                stack.pop()</span><br><span class="line">                stack.pop()</span><br><span class="line">        stack.append(node)</span><br><span class="line">        <span class="keyword">return</span> stack == [<span class="string">'#'</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isValidSerialization</span><span class="params">(self, preorder)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type preorder: str</span><br><span class="line">        :rtype: bool</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> preorder:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        stack = []</span><br><span class="line">        node_list = preorder.split(<span class="string">','</span>)</span><br><span class="line">        <span class="keyword">for</span> node <span class="keyword">in</span> node_list:</span><br><span class="line">        <span class="keyword">if</span> node == <span class="string">'#'</span>:</span><br><span class="line">            <span class="keyword">while</span> len(stack) &gt;= <span class="number">2</span> <span class="keyword">and</span> stack[-<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> stack[-<span class="number">2</span>] != <span class="string">'#'</span>:</span><br><span class="line">                stack.pop()</span><br><span class="line">                stack.pop()</span><br><span class="line">        stack.append(node)</span><br><span class="line">        <span class="keyword">return</span> stack == [<span class="string">'#'</span>]</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/verify-preorder-serialization-of-a-binary-tree/" data-id="cinzikse80005y4qjw5awk0qq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/verify-preorder-serialization-of-a-binary-tree/" data-id="cio03m4ft00058lo9yrnyx688" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -140,7 +140,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">6</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -149,7 +149,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/algorithms/" style="font-size: NaNpx;">algorithms</a><a href="/tags/leetcode/" style="font-size: NaNpx;">leetcode</a>
+      <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a><a href="/tags/algorithms/" style="font-size: 15px;">algorithms</a><a href="/tags/leetcode/" style="font-size: 20px;">leetcode</a>
     </div>
   </div>
 
@@ -158,7 +158,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -170,23 +170,23 @@
       <ul>
         
           <li>
+            <a href="/2016/05/09/self-crossing/">335. Self Crossing</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/09/palindrome-pairs/">336. Palindrome Pairs</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/09/count-of-range-sum/">327. Count of Range Sum</a>
+          </li>
+        
+          <li>
             <a href="/2016/05/09/patching-array/">330. Patching Array</a>
           </li>
         
           <li>
             <a href="/2016/05/09/verify-preorder-serialization-of-a-binary-tree/">331. Verify Preorder Serialization of a Binary Tree</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/09/house-robber-iii/">337. House Robber III</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/08/longest-substring-with-at-most-k-distinct-characters/">340. Longest Substring with At Most K Distinct Characters</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/08/design-tic-tac-toe/">348. Design Tic-Tac-Toe</a>
           </li>
         
       </ul>
