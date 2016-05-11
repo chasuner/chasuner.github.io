@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>324. Wiggle Sort II | Hexo</title>
+  <title>236. Lowest Common Ancestor of a Binary Tree | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Given an unsorted array nums, reorder it such that nums[0] &amp;lt; nums[1] &amp;gt; nums[2] &amp;lt; nums[3]....
-Example:(1) Given nums = [1, 5, 1, 1, 6, 4], one possible answer is [1, 4, 1, 5, 1, 6].(2) Given n">
+  <meta name="description" content="Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes v a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="324. Wiggle Sort II">
-<meta property="og:url" content="http://yoursite.com/2016/05/09/wiggle-sort-ii/index.html">
+<meta property="og:title" content="236. Lowest Common Ancestor of a Binary Tree">
+<meta property="og:url" content="http://yoursite.com/2016/05/11/lowest-common-ancestor-of-a-binary-tree/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Given an unsorted array nums, reorder it such that nums[0] &amp;lt; nums[1] &amp;gt; nums[2] &amp;lt; nums[3]....
-Example:(1) Given nums = [1, 5, 1, 1, 6, 4], one possible answer is [1, 4, 1, 5, 1, 6].(2) Given n">
+<meta property="og:description" content="Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes v a">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="324. Wiggle Sort II">
-<meta name="twitter:description" content="Given an unsorted array nums, reorder it such that nums[0] &amp;lt; nums[1] &amp;gt; nums[2] &amp;lt; nums[3]....
-Example:(1) Given nums = [1, 5, 1, 1, 6, 4], one possible answer is [1, 4, 1, 5, 1, 6].(2) Given n">
+<meta name="twitter:title" content="236. Lowest Common Ancestor of a Binary Tree">
+<meta name="twitter:description" content="Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes v a">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -62,10 +62,10 @@ Example:(1) Given nums = [1, 5, 1, 1, 6, 4], one possible answer is [1, 4, 1, 5,
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-wiggle-sort-ii" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-lowest-common-ancestor-of-a-binary-tree" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/09/wiggle-sort-ii/" class="article-date">
-  <time datetime="2016-05-09T14:59:23.000Z" itemprop="datePublished">2016-05-09</time>
+    <a href="/2016/05/11/lowest-common-ancestor-of-a-binary-tree/" class="article-date">
+  <time datetime="2016-05-11T12:09:50.000Z" itemprop="datePublished">2016-05-11</time>
 </a>
     
   </div>
@@ -76,7 +76,7 @@ Example:(1) Given nums = [1, 5, 1, 1, 6, 4], one possible answer is [1, 4, 1, 5,
         
   
     <h1 class="article-title" itemprop="name">
-      324. Wiggle Sort II
+      236. Lowest Common Ancestor of a Binary Tree
     </h1>
   
 
@@ -84,16 +84,16 @@ Example:(1) Given nums = [1, 5, 1, 1, 6, 4], one possible answer is [1, 4, 1, 5,
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Given an unsorted array <code>nums</code>, reorder it such that <code>nums[0] &lt; nums[1] &gt; nums[2] &lt; nums[3]....</code></p>
-<p>Example:<br>(1) Given <code>nums = [1, 5, 1, 1, 6, 4]</code>, one possible answer is <code>[1, 4, 1, 5, 1, 6]</code>.<br>(2) Given <code>nums = [1, 3, 2, 2, 3, 1]</code>, one possible answer is <code>[2, 3, 1, 3, 1, 2]</code>.</p>
-<p>Note:<br>You may assume all input has valid answer.</p>
-<p>Follow Up:<br>Can you do it in O(n) time and/or in-place with O(1) extra space?</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wiggleSort</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :rtype: void Do not return anything, modify nums in-place instead.</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">            <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+        <p>Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.</p>
+<p>According to the definition of <a href="https://en.wikipedia.org/wiki/Lowest_common_ancestor" target="_blank" rel="external">LCA on Wikipedia</a>: “The lowest common ancestor is defined between two nodes v and w as the lowest node in T that has both v and w as descendants (where we allow <strong>a node to be a descendant of itself</strong>).”</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">example</span>:</span><br><span class="line">        _______3______</span><br><span class="line">       /              <span class="string">\</span></span><br><span class="line">    ___5__          ___1__</span><br><span class="line">   /      <span class="string">\</span>        /      <span class="string">\</span></span><br><span class="line">   <span class="number">6</span>      _2       <span class="number">0</span>       <span class="number">8</span></span><br><span class="line">         /  <span class="string">\</span></span><br><span class="line">         <span class="number">7</span>   <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p>For example, the lowest common ancestor (LCA) of nodes <code>5</code> and <code>1</code> is <code>3</code>. Another example is LCA of nodes <code>5</code> and <code>4</code> is <code>5</code>, since a node can be a descendant of itself according to the LCA definition.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/wiggle-sort-ii/" data-id="cio2virjz00059vo9hjw1aypv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/11/lowest-common-ancestor-of-a-binary-tree/" data-id="cio2virm6000z9vo95ire6rz5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -104,19 +104,10 @@ Example:(1) Given nums = [1, 5, 1, 1, 6, 4], one possible answer is [1, 4, 1, 5,
     
 <nav id="article-nav">
   
-    <a href="/2016/05/09/create-maximum-number/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          321. Create Maximum Number
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/05/09/self-crossing/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/05/11/remove-invalid-parentheses/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">335. Self Crossing</div>
+      <div class="article-nav-title">301. Remove Invalid Parentheses</div>
     </a>
   
 </nav>
