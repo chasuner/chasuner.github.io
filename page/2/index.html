@@ -61,6 +61,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-coin-change" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/10/coin-change/" class="article-date">
+  <time datetime="2016-05-10T03:47:41.000Z" itemprop="datePublished">2016-05-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/10/coin-change/">322. Coin Change</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return <code>-1</code>.</p>
+<p>Example 1:<br>coins = <code>[1, 2, 5]</code>, amount = <code>11</code><br>return <code>3</code> (11 = 5 + 5 + 1)</p>
+<p>Example 2:<br>coins = <code>[2]</code>, amount = <code>3</code><br>return <code>-1</code>.</p>
+<p>Note:<br>You may assume that you have an infinite number of each kind of coin.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(n * k), n is the number of coins, k is the amount of money</span></span><br><span class="line"><span class="comment"># Space: O(k)</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">coinChange</span><span class="params">(self, coins, amount)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type coins: List[int]</span><br><span class="line">        :type amount: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        res = -<span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> coins:</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> amount:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        INF = <span class="number">0x7fffffff</span></span><br><span class="line">        dp = [INF] * (amount + <span class="number">1</span>)</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(dp)):</span><br><span class="line">            <span class="keyword">if</span> dp[i] != INF:</span><br><span class="line">                <span class="keyword">for</span> coin <span class="keyword">in</span> coins:</span><br><span class="line">                    <span class="keyword">if</span> i + coin &lt;= amount:</span><br><span class="line">                        dp[i + coin] = min(dp[i + coin], dp[i] + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> dp[amount] != INF:</span><br><span class="line">            res = dp[amount]</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/10/coin-change/" data-id="cio3yhaee001ti2qjepq53dgq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-create-maximum-number" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/09/create-maximum-number/" class="article-date">
@@ -92,7 +135,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/create-maximum-number/" data-id="cio3xdbcj001kf5qjafhq6gz1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/create-maximum-number/" data-id="cio3yhaeb001ni2qjknuz5mtq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -135,7 +178,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/wiggle-sort-ii/" data-id="cio3xdba00005f5qjjxfab3es" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/wiggle-sort-ii/" data-id="cio3yhabm0005i2qjzsmgydqv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -179,7 +222,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/self-crossing/" data-id="cio3xdbbp000hf5qj0o1kyw2x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/self-crossing/" data-id="cio3yhadk000hi2qjqykvvitw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -220,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/palindrome-pairs/" data-id="cio3xdbc5000wf5qj5q25aaib" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/palindrome-pairs/" data-id="cio3yhadx000zi2qjubukhuv8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -263,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/count-of-range-sum/" data-id="cio3xdbck001nf5qjc6mfewjh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/count-of-range-sum/" data-id="cio3yhaed001qi2qj9kq8pz2c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -308,7 +351,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/patching-array/" data-id="cio3xdbc3000tf5qjcoli03p4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/patching-array/" data-id="cio3yhadv000wi2qjjbednp2a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -357,7 +400,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/verify-preorder-serialization-of-a-binary-tree/" data-id="cio3xdba50008f5qj7qds33yn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/verify-preorder-serialization-of-a-binary-tree/" data-id="cio3yhabp0008i2qj7csqmcrw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -400,7 +443,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/house-robber-iii/" data-id="cio3xdbcg001ef5qj52rbvk21" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/house-robber-iii/" data-id="cio3yhae8001hi2qjiai2rqnj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -443,54 +486,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/08/longest-substring-with-at-most-k-distinct-characters/" data-id="cio3xdbcc0018f5qj2v8jidrv" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-design-tic-tac-toe" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/08/design-tic-tac-toe/" class="article-date">
-  <time datetime="2016-05-08T15:13:59.000Z" itemprop="datePublished">2016-05-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/08/design-tic-tac-toe/">348. Design Tic-Tac-Toe</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Design a Tic-tac-toe game that is played between two players on a n x n grid.</p>
-<p>You may assume the following rules:</p>
-<p>A move is guaranteed to be valid and is placed on an empty block.<br>Once a winning condition is reached, no more moves is allowed.<br>A player who succeeds in placing n of their marks in a horizontal, vertical, or diagonal row wins the game.<br>Example:<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">Given <span class="keyword">n</span> = 3, assume that player 1 is <span class="string">"X" and player 2 is "O"</span> <span class="keyword">in</span> the board.</span><br><span class="line"></span><br><span class="line">TicTacToe toe = new TicTacToe(3);</span><br><span class="line"></span><br><span class="line">toe.<span class="keyword">move</span>(0, 0, 1); -&gt; Returns 0 (<span class="keyword">no</span> <span class="keyword">one</span> wins)</span><br><span class="line">|X| | |</span><br><span class="line">| | | |    <span class="comment">// Player 1 makes a move at (0, 0).</span></span><br><span class="line">| | | |</span><br><span class="line"></span><br><span class="line">toe.<span class="keyword">move</span>(0, 2, 2); -&gt; Returns 0 (<span class="keyword">no</span> <span class="keyword">one</span> wins)</span><br><span class="line">|X| |O|</span><br><span class="line">| | | |    <span class="comment">// Player 2 makes a move at (0, 2).</span></span><br><span class="line">| | | |</span><br><span class="line"></span><br><span class="line">toe.<span class="keyword">move</span>(2, 2, 1); -&gt; Returns 0 (<span class="keyword">no</span> <span class="keyword">one</span> wins)</span><br><span class="line">|X| |O|</span><br><span class="line">| | | |    <span class="comment">// Player 1 makes a move at (2, 2).</span></span><br><span class="line">| | |X|</span><br><span class="line"></span><br><span class="line">toe.<span class="keyword">move</span>(1, 1, 2); -&gt; Returns 0 (<span class="keyword">no</span> <span class="keyword">one</span> wins)</span><br><span class="line">|X| |O|</span><br><span class="line">| |O| |    <span class="comment">// Player 2 makes a move at (1, 1).</span></span><br><span class="line">| | |X|</span><br><span class="line"></span><br><span class="line">toe.<span class="keyword">move</span>(2, 0, 1); -&gt; Returns 0 (<span class="keyword">no</span> <span class="keyword">one</span> wins)</span><br><span class="line">|X| |O|</span><br><span class="line">| |O| |    <span class="comment">// Player 1 makes a move at (2, 0).</span></span><br><span class="line">|X| |X|</span><br><span class="line"></span><br><span class="line">toe.<span class="keyword">move</span>(1, 0, 2); -&gt; Returns 0 (<span class="keyword">no</span> <span class="keyword">one</span> wins)</span><br><span class="line">|X| |O|</span><br><span class="line">|O|O| |    <span class="comment">// Player 2 makes a move at (1, 0).</span></span><br><span class="line">|X| |X|</span><br><span class="line"></span><br><span class="line">toe.<span class="keyword">move</span>(2, 1, 1); -&gt; Returns 1 (player 1 wins)</span><br><span class="line">|X| |O|</span><br><span class="line">|O|O| |    <span class="comment">// Player 1 makes a move at (2, 1).</span></span><br><span class="line">|X|X|X|</span><br></pre></td></tr></table></figure></p>
-<p>Follow up:<br>Could you do better than O(n2) per <code>move()</code> operation?</p>
-<p>1.Could you trade extra space such that <code>move()</code> operation can be done in O(1)?</p>
-<p>2.You need two arrays: int rows[n], int cols[n], plus two variables: diagonal, anti_diagonal.</p>
-<p>思路: 最直接的方法是每次放置之后扫描每行，每列，对角线，反对角线来判断是否都是1或者2，这样时间复杂度为O(n^2)</p>
-<p>降低时间复杂度的方法是判断胜负的时候如何避免扫描，仅仅根据放置的点来直接得到行列，对角反对角是否都是棋子1或者棋子2，这样比较容易想到一行都是1时，该行的和为n，故只需要记录每行，每列，对角以及反对角的和即可。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(1), per move.</span></span><br><span class="line"><span class="comment"># Space: O(n^2)</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TicTacToe</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        Initialize your data structure here.</span><br><span class="line">        :type n: int</span><br><span class="line">        """</span></span><br><span class="line">        self.__rows = [[<span class="number">0</span>, <span class="number">0</span>] <span class="keyword">for</span> _ <span class="keyword">in</span> xrange(n)]</span><br><span class="line">        self.__cols = [[<span class="number">0</span>, <span class="number">0</span>] <span class="keyword">for</span> _ <span class="keyword">in</span> xrange(n)]</span><br><span class="line">        self.__diagonal = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">        self.__anti_diagonal = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(self, row, col, player)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        Player &#123;player&#125; makes a move at (&#123;row&#125;, &#123;col&#125;).</span><br><span class="line">        @param row The row of the board.</span><br><span class="line">        @param col The column of the board.</span><br><span class="line">        @param player The player, can be either 1 or 2.</span><br><span class="line">        @return The current winning condition, can be either:</span><br><span class="line">                0: No one wins.</span><br><span class="line">                1: Player 1 wins.</span><br><span class="line">                2: Player 2 wins.</span><br><span class="line">        :type row: int</span><br><span class="line">        :type col: int</span><br><span class="line">        :type player: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        i, n = player - <span class="number">1</span>, len(self.__rows)</span><br><span class="line">        self.__rows[row][i] += <span class="number">1</span></span><br><span class="line">        self.__cols[col][i] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> row == col:</span><br><span class="line">            self.__diagonal[i] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> col == n - row - <span class="number">1</span>:</span><br><span class="line">            self.__anti_diagonal[i] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> any([self.__rows[row][i] == n, \</span><br><span class="line">                self.__cols[col][i] == n, \</span><br><span class="line">                self.__diagonal[i] == n, \</span><br><span class="line">                self.__anti_diagonal[i] == n]):</span><br><span class="line">            <span class="keyword">return</span> player</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Your TicTacToe object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = TicTacToe(n)</span></span><br><span class="line"><span class="comment"># param_1 = obj.move(row,col,player)</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/08/design-tic-tac-toe/" data-id="cio3xdbch001hf5qjw7deu0iw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/08/longest-substring-with-at-most-k-distinct-characters/" data-id="cio3yhae4001bi2qjrod17iw8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -517,7 +513,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">21</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">22</span></li></ul>
     </div>
   </div>
 
@@ -535,7 +531,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">21</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">22</span></li></ul>
     </div>
   </div>
 
@@ -545,6 +541,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/05/12/search-a-2d-matrix-ii/">240. Search a 2D Matrix II</a>
+          </li>
         
           <li>
             <a href="/2016/05/12/serialize-and-deserialize-binary-tree/">297. Serialize and Deserialize Binary Tree</a>
@@ -560,10 +560,6 @@
         
           <li>
             <a href="/2016/05/11/lowest-common-ancestor-of-a-binary-tree/">236. Lowest Common Ancestor of a Binary Tree</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/11/remove-invalid-parentheses/">301. Remove Invalid Parentheses</a>
           </li>
         
       </ul>
