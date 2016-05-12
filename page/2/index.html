@@ -61,6 +61,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-create-maximum-number" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/create-maximum-number/" class="article-date">
+  <time datetime="2016-05-09T15:20:42.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/create-maximum-number/">321. Create Maximum Number</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given two arrays of length <code>m</code> and <code>n</code> with digits <code>0-9</code> representing two numbers. Create the maximum number of length <code>k &lt;= m + n</code> from digits of the two. The relative order of the digits from the same array must be preserved. Return an array of the <code>k</code> digits. You should try to optimize your time and space complexity.</p>
+<p>Example 1:<br>nums1 = <code>[3, 4, 6, 5]</code><br>nums2 = <code>[9, 1, 2, 5, 8, 3]</code><br>k = <code>5</code><br>return <code>[9, 8, 6, 5, 3]</code></p>
+<p>Example 2:<br>nums1 = <code>[6, 7]</code><br>nums2 = <code>[6, 0, 4]</code><br>k = <code>5</code><br>return <code>[6, 7, 6, 0, 4]</code></p>
+<p>Example 3:<br>nums1 = <code>[3, 9]</code><br>nums2 = <code>[8, 9]</code><br>k = <code>3</code><br>return <code>[9, 8, 9]</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(k * (m + n + k)) ~ O(k * (m + n + k^2))</span></span><br><span class="line"><span class="comment"># Space: O(m + n + k^2)</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxNumber</span><span class="params">(self, nums1, nums2, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums1: List[int]</span><br><span class="line">        :type nums2: List[int]</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">if</span> k &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        m, n = len(nums1), len(nums2)</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">get_result</span><span class="params">(nums, start, end, d)</span>:</span></span><br><span class="line">            d[end] = get_max_digit(nums, end)</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(start, end)[::-<span class="number">1</span>]:</span><br><span class="line">                d[i] = get_sub_digit(d[i + <span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">get_max_digit</span><span class="params">(nums, end)</span>:</span></span><br><span class="line">            res = []</span><br><span class="line">            drop = len(nums) - end</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(nums)):</span><br><span class="line">                <span class="keyword">while</span> drop &gt; <span class="number">0</span> <span class="keyword">and</span> res <span class="keyword">and</span> nums[i] &gt; res[-<span class="number">1</span>]:</span><br><span class="line">                    res.pop()</span><br><span class="line">                    drop -= <span class="number">1</span></span><br><span class="line">                res.append(nums[i])</span><br><span class="line">            <span class="keyword">return</span> res[:end]</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">get_sub_digit</span><span class="params">(nums)</span>:</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">                <span class="keyword">if</span> i == len(nums) - <span class="number">1</span> <span class="keyword">or</span> nums[i] &lt; nums[i + <span class="number">1</span>]:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">return</span> nums[:i] + nums[i + <span class="number">1</span>:]</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(a, b)</span>:</span></span><br><span class="line">            <span class="keyword">return</span> [max(a, b).pop(<span class="number">0</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> xrange(len(a) + len(b))]</span><br><span class="line"></span><br><span class="line">        d1, d2 = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> range(k + <span class="number">1</span>)], [[] <span class="keyword">for</span> _ <span class="keyword">in</span> range(k + <span class="number">1</span>)]</span><br><span class="line">        get_result(nums1, max(<span class="number">0</span>, k - n), min(k, m), d1)</span><br><span class="line">        get_result(nums2, max(<span class="number">0</span>, k - m), min(k, n), d2)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max(merge(d1[i], d2[k - i]) <span class="keyword">for</span> i <span class="keyword">in</span> xrange(max(<span class="number">0</span>, k - n), min(k, m) + <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/create-maximum-number/" data-id="cio3xdbcj001kf5qjafhq6gz1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-wiggle-sort-ii" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/09/wiggle-sort-ii/" class="article-date">
@@ -92,7 +135,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/wiggle-sort-ii/" data-id="cio3s97pd00052lqj8tsxwt55" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/wiggle-sort-ii/" data-id="cio3xdba00005f5qjjxfab3es" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -136,7 +179,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/self-crossing/" data-id="cio3s97pm000e2lqj44ix8ilv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/self-crossing/" data-id="cio3xdbbp000hf5qj0o1kyw2x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -177,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/palindrome-pairs/" data-id="cio3s97ri000t2lqjd2q7xir5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/palindrome-pairs/" data-id="cio3xdbc5000wf5qj5q25aaib" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -220,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/count-of-range-sum/" data-id="cio3s97rz001k2lqjki8k1sr0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/count-of-range-sum/" data-id="cio3xdbck001nf5qjc6mfewjh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -265,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/patching-array/" data-id="cio3s97rh000q2lqjirdnlq74" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/patching-array/" data-id="cio3xdbc3000tf5qjcoli03p4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -314,7 +357,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/verify-preorder-serialization-of-a-binary-tree/" data-id="cio3s97ph00082lqj87tdrz99" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/verify-preorder-serialization-of-a-binary-tree/" data-id="cio3xdba50008f5qj7qds33yn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -357,7 +400,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/house-robber-iii/" data-id="cio3s97rt001b2lqjw8tt8bq8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/house-robber-iii/" data-id="cio3xdbcg001ef5qj52rbvk21" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -400,7 +443,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/08/longest-substring-with-at-most-k-distinct-characters/" data-id="cio3s97rp00152lqjn866rodu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/08/longest-substring-with-at-most-k-distinct-characters/" data-id="cio3xdbcc0018f5qj2v8jidrv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -447,50 +490,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/08/design-tic-tac-toe/" data-id="cio3s97rw001e2lqjyyeu5boh" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-top-k-frequent-elements" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/02/top-k-frequent-elements/" class="article-date">
-  <time datetime="2016-05-02T13:55:47.000Z" itemprop="datePublished">2016-05-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/02/top-k-frequent-elements/">347. Top K Frequent Elements</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given a non-empty array of integers, return the k most frequent elements.</p>
-<p>For example,<br>Given <code>[1,1,1,2,2,3]</code> and k = 2, return <code>[1,2]</code>.</p>
-<p>Note:<br>You may assume k is always valid, 1 ≤ k ≤ number of unique elements.<br>Your algorithm’s time complexity <strong>must be</strong> better than O(n log n), where n is the array’s size.</p>
-<p>思路: 选k个最频繁的元素，首先肯定是先对数组元素计数，后续如何选取</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">topKFrequent</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/02/top-k-frequent-elements/" data-id="cio3s97pk000b2lqjswt6yjtz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/08/design-tic-tac-toe/" data-id="cio3xdbch001hf5qjw7deu0iw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -504,7 +504,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -517,7 +517,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">20</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">21</span></li></ul>
     </div>
   </div>
 
@@ -535,7 +535,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">20</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">21</span></li></ul>
     </div>
   </div>
 
@@ -545,6 +545,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/05/12/serialize-and-deserialize-binary-tree/">297. Serialize and Deserialize Binary Tree</a>
+          </li>
         
           <li>
             <a href="/2016/05/12/longest-increasing-subsequence/">300. Longest Increasing Subsequence</a>
@@ -560,10 +564,6 @@
         
           <li>
             <a href="/2016/05/11/remove-invalid-parentheses/">301. Remove Invalid Parentheses</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/10/minimum-height-trees/">310. Minimum Height Trees</a>
           </li>
         
       </ul>

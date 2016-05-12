@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>318. Maximum Product of Word Lengths | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Given a string array words, find the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. You may assume that each word will contain only lower case lett">
-<meta property="og:type" content="article">
-<meta property="og:title" content="318. Maximum Product of Word Lengths">
-<meta property="og:url" content="http://yoursite.com/2016/05/10/maximum-product-of-word-lengths/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Given a string array words, find the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. You may assume that each word will contain only lower case lett">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="318. Maximum Product of Word Lengths">
-<meta name="twitter:description" content="Given a string array words, find the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. You may assume that each word will contain only lower case lett">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,10 +59,12 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-maximum-product-of-word-lengths" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-top-k-frequent-elements" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/10/maximum-product-of-word-lengths/" class="article-date">
-  <time datetime="2016-05-10T06:18:10.000Z" itemprop="datePublished">2016-05-10</time>
+    <a href="/2016/05/02/top-k-frequent-elements/" class="article-date">
+  <time datetime="2016-05-02T13:55:47.000Z" itemprop="datePublished">2016-05-02</time>
 </a>
     
   </div>
@@ -72,8 +74,8 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      318. Maximum Product of Word Lengths
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/02/top-k-frequent-elements/">347. Top K Frequent Elements</a>
     </h1>
   
 
@@ -81,16 +83,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Given a string array <code>words</code>, find the maximum value of <code>length(word[i]) * length(word[j])</code> where the two words do not share common letters. You may assume that each word will contain only lower case letters. If no such two words exist, return 0.</p>
-<p>Example 1:<br>Given <code>[&quot;abcw&quot;, &quot;baz&quot;, &quot;foo&quot;, &quot;bar&quot;, &quot;xtfn&quot;, &quot;abcdef&quot;]</code><br>Return <code>16</code><br>The two words can be <code>&quot;abcw&quot;, &quot;xtfn&quot;</code>.</p>
-<p>Example 2:<br>Given <code>[&quot;a&quot;, &quot;ab&quot;, &quot;abc&quot;, &quot;d&quot;, &quot;cd&quot;, &quot;bcd&quot;, &quot;abcd&quot;]</code><br>Return <code>4</code><br>The two words can be <code>&quot;ab&quot;, &quot;cd&quot;</code>.</p>
-<p>Example 3:<br>Given <code>[&quot;a&quot;, &quot;aa&quot;, &quot;aaa&quot;, &quot;aaaa&quot;]</code><br>Return <code>0</code><br>No such pair of words.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProduct</span><span class="params">(self, words)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type words: List[str]</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br></pre></td></tr></table></figure>
+        <p>Given a non-empty array of integers, return the k most frequent elements.</p>
+<p>For example,<br>Given <code>[1,1,1,2,2,3]</code> and k = 2, return <code>[1,2]</code>.</p>
+<p>Note:<br>You may assume k is always valid, 1 ≤ k ≤ number of unique elements.<br>Your algorithm’s time complexity <strong>must be</strong> better than O(n log n), where n is the array’s size.</p>
+<p>思路: 选k个最频繁的元素，首先肯定是先对数组元素计数，后续如何选取</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">topKFrequent</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/10/maximum-product-of-word-lengths/" data-id="cio3xdbc80012f5qjnhp7zekt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/02/top-k-frequent-elements/" data-id="cio3xdba6000bf5qjoavq8ctc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -98,29 +100,15 @@
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2016/05/10/remove-duplicate-letters/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          316. Remove Duplicate Letters
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/05/10/coin-change/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">322. Coin Change</div>
-    </a>
-  
-</nav>
-
-  
 </article>
 
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
+  
 </section>
         
           <aside id="sidebar">
