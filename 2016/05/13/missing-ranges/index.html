@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>318. Maximum Product of Word Lengths | Hexo</title>
+  <title>163. Missing Ranges | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Given a string array words, find the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. You may assume that each word will contain only lower case lett">
+  <meta name="description" content="Given a sorted integer array where the range of elements are [lower, upper] inclusive, return its missing ranges.
+For example, given [0, 1, 3, 50, 75], lower = 0 and upper = 99, return [&amp;quot;2&amp;quot;,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="318. Maximum Product of Word Lengths">
-<meta property="og:url" content="http://yoursite.com/2016/05/10/maximum-product-of-word-lengths/index.html">
+<meta property="og:title" content="163. Missing Ranges">
+<meta property="og:url" content="http://yoursite.com/2016/05/13/missing-ranges/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Given a string array words, find the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. You may assume that each word will contain only lower case lett">
+<meta property="og:description" content="Given a sorted integer array where the range of elements are [lower, upper] inclusive, return its missing ranges.
+For example, given [0, 1, 3, 50, 75], lower = 0 and upper = 99, return [&amp;quot;2&amp;quot;,">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="318. Maximum Product of Word Lengths">
-<meta name="twitter:description" content="Given a string array words, find the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. You may assume that each word will contain only lower case lett">
+<meta name="twitter:title" content="163. Missing Ranges">
+<meta name="twitter:description" content="Given a sorted integer array where the range of elements are [lower, upper] inclusive, return its missing ranges.
+For example, given [0, 1, 3, 50, 75], lower = 0 and upper = 99, return [&amp;quot;2&amp;quot;,">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,10 +62,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-maximum-product-of-word-lengths" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-missing-ranges" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/10/maximum-product-of-word-lengths/" class="article-date">
-  <time datetime="2016-05-10T06:18:10.000Z" itemprop="datePublished">2016-05-10</time>
+    <a href="/2016/05/13/missing-ranges/" class="article-date">
+  <time datetime="2016-05-12T16:27:40.000Z" itemprop="datePublished">2016-05-13</time>
 </a>
     
   </div>
@@ -73,7 +76,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      318. Maximum Product of Word Lengths
+      163. Missing Ranges
     </h1>
   
 
@@ -81,16 +84,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Given a string array <code>words</code>, find the maximum value of <code>length(word[i]) * length(word[j])</code> where the two words do not share common letters. You may assume that each word will contain only lower case letters. If no such two words exist, return 0.</p>
-<p>Example 1:<br>Given <code>[&quot;abcw&quot;, &quot;baz&quot;, &quot;foo&quot;, &quot;bar&quot;, &quot;xtfn&quot;, &quot;abcdef&quot;]</code><br>Return <code>16</code><br>The two words can be <code>&quot;abcw&quot;, &quot;xtfn&quot;</code>.</p>
-<p>Example 2:<br>Given <code>[&quot;a&quot;, &quot;ab&quot;, &quot;abc&quot;, &quot;d&quot;, &quot;cd&quot;, &quot;bcd&quot;, &quot;abcd&quot;]</code><br>Return <code>4</code><br>The two words can be <code>&quot;ab&quot;, &quot;cd&quot;</code>.</p>
-<p>Example 3:<br>Given <code>[&quot;a&quot;, &quot;aa&quot;, &quot;aaa&quot;, &quot;aaaa&quot;]</code><br>Return <code>0</code><br>No such pair of words.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProduct</span><span class="params">(self, words)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type words: List[str]</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br></pre></td></tr></table></figure>
+        <p>Given a sorted integer array where the range of elements are [lower, upper] inclusive, return its missing ranges.</p>
+<p>For example, given <code>[0, 1, 3, 50, 75]</code>, lower = 0 and upper = 99, return <code>[&quot;2&quot;, &quot;4-&gt;49&quot;, &quot;51-&gt;74&quot;, &quot;76-&gt;99&quot;]</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(n)</span></span><br><span class="line"><span class="comment"># Space: O(1)</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMissingRanges</span><span class="params">(self, nums, lower, upper)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type lower: int</span><br><span class="line">        :type upper: int</span><br><span class="line">        :rtype: List[str]</span><br><span class="line">        """</span></span><br><span class="line">        res = []</span><br><span class="line">        pre = lower - <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(nums) + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> i == len(nums):</span><br><span class="line">                cur = upper + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cur = nums[i]</span><br><span class="line">            <span class="keyword">if</span> cur - pre &gt; <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">if</span> cur - pre == <span class="number">2</span>:</span><br><span class="line">                    s = str(pre + <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    s = <span class="string">'%s-&gt;%s'</span> % (pre + <span class="number">1</span>, cur - <span class="number">1</span>)</span><br><span class="line">                res.append(s)</span><br><span class="line">            pre = cur</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/10/maximum-product-of-word-lengths/" data-id="cio4jcp5l001eako9r4cdyvdq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/13/missing-ranges/" data-id="cio4jcp5g0018ako9ojvxe3va" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -101,19 +102,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/05/10/remove-duplicate-letters/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          316. Remove Duplicate Letters
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/05/10/coin-change/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/05/12/single-number-iii/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">322. Coin Change</div>
+      <div class="article-nav-title">260. Single Number III</div>
     </a>
   
 </nav>
