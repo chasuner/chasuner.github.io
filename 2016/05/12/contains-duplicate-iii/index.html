@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>327. Count of Range Sum | Hexo</title>
+  <title>220. Contains Duplicate III | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Given an integer array nums, return the number of range sums that lie in [lower, upper] inclusive.Range sum S(i, j) is defined as the sum of the elements in nums between indices i and j (i ≤ j), inclu">
+  <meta name="description" content="Given an array of integers, find out whether there are two distinct indices i and j in the array such that the difference between nums[i] and nums[j] is at most t and the difference between i and j is">
 <meta property="og:type" content="article">
-<meta property="og:title" content="327. Count of Range Sum">
-<meta property="og:url" content="http://yoursite.com/2016/05/09/count-of-range-sum/index.html">
+<meta property="og:title" content="220. Contains Duplicate III">
+<meta property="og:url" content="http://yoursite.com/2016/05/12/contains-duplicate-iii/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Given an integer array nums, return the number of range sums that lie in [lower, upper] inclusive.Range sum S(i, j) is defined as the sum of the elements in nums between indices i and j (i ≤ j), inclu">
+<meta property="og:description" content="Given an array of integers, find out whether there are two distinct indices i and j in the array such that the difference between nums[i] and nums[j] is at most t and the difference between i and j is">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="327. Count of Range Sum">
-<meta name="twitter:description" content="Given an integer array nums, return the number of range sums that lie in [lower, upper] inclusive.Range sum S(i, j) is defined as the sum of the elements in nums between indices i and j (i ≤ j), inclu">
+<meta name="twitter:title" content="220. Contains Duplicate III">
+<meta name="twitter:description" content="Given an array of integers, find out whether there are two distinct indices i and j in the array such that the difference between nums[i] and nums[j] is at most t and the difference between i and j is">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,10 +59,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-count-of-range-sum" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-contains-duplicate-iii" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/09/count-of-range-sum/" class="article-date">
-  <time datetime="2016-05-09T05:57:09.000Z" itemprop="datePublished">2016-05-09</time>
+    <a href="/2016/05/12/contains-duplicate-iii/" class="article-date">
+  <time datetime="2016-05-12T09:07:26.000Z" itemprop="datePublished">2016-05-12</time>
 </a>
     
   </div>
@@ -73,7 +73,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      327. Count of Range Sum
+      220. Contains Duplicate III
     </h1>
   
 
@@ -81,16 +81,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Given an integer array <code>nums</code>, return the number of range sums that lie in <code>[lower, upper]</code> inclusive.<br>Range sum <code>S(i, j)</code> is defined as the sum of the elements in <code>nums</code> between indices <code>i</code> and <code>j</code> (<code>i</code> ≤ <code>j</code>), inclusive.</p>
-<p>Note:<br>A naive algorithm of O(n2) is trivial. You MUST do better than that.</p>
-<p>Example:<br>Given nums = <code>[-2, 5, -1]</code>, lower = <code>-2</code>, upper = <code>2</code>,<br>Return <code>3</code>.<br>The three ranges are : <code>[0, 0], [2, 2], [0, 2]</code> and their respective sums are: <code>-2, -1, 2</code>.</p>
-<p>直接遍历所有子串的时间复杂度是O(n^2)，</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countRangeSum</span><span class="params">(self, nums, lower, upper)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type lower: int</span><br><span class="line">        :type upper: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br></pre></td></tr></table></figure>
+        <p>Given an array of integers, find out whether there are two distinct indices i and j in the array such that the difference between <code>nums[i]</code> and <code>nums[j]</code> is at most t and the difference between i and j is at most k.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/count-of-range-sum/" data-id="cio4i3r5q001z7go9jedisb8r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/contains-duplicate-iii/" data-id="cio4i3r5r00227go9ro71y15t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -101,19 +98,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/05/09/palindrome-pairs/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/05/12/single-number-iii/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          336. Palindrome Pairs
+          260. Single Number III
         
       </div>
     </a>
   
   
-    <a href="/2016/05/09/patching-array/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/05/12/sliding-window-maximum/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">330. Patching Array</div>
+      <div class="article-nav-title">239. Sliding Window Maximum</div>
     </a>
   
 </nav>
