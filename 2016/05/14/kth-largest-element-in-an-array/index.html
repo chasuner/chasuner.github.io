@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>347. Top K Frequent Elements | Hexo</title>
+  <title>215. Kth Largest Element in an Array | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Given a non-empty array of integers, return the k most frequent elements.
-For example,Given [1,1,1,2,2,3] and k = 2, return [1,2].
-Note:You may assume k is always valid, 1 ≤ k ≤ number of unique eleme">
+  <meta name="description" content="Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
+For example,Given [3,2,1,5,6,4] and k = 2, return 5.
+Note:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="347. Top K Frequent Elements">
-<meta property="og:url" content="http://yoursite.com/2016/05/02/top-k-frequent-elements/index.html">
+<meta property="og:title" content="215. Kth Largest Element in an Array">
+<meta property="og:url" content="http://yoursite.com/2016/05/14/kth-largest-element-in-an-array/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Given a non-empty array of integers, return the k most frequent elements.
-For example,Given [1,1,1,2,2,3] and k = 2, return [1,2].
-Note:You may assume k is always valid, 1 ≤ k ≤ number of unique eleme">
+<meta property="og:description" content="Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
+For example,Given [3,2,1,5,6,4] and k = 2, return 5.
+Note:">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="347. Top K Frequent Elements">
-<meta name="twitter:description" content="Given a non-empty array of integers, return the k most frequent elements.
-For example,Given [1,1,1,2,2,3] and k = 2, return [1,2].
-Note:You may assume k is always valid, 1 ≤ k ≤ number of unique eleme">
+<meta name="twitter:title" content="215. Kth Largest Element in an Array">
+<meta name="twitter:description" content="Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
+For example,Given [3,2,1,5,6,4] and k = 2, return 5.
+Note:">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -65,10 +65,10 @@ Note:You may assume k is always valid, 1 ≤ k ≤ number of unique eleme">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-top-k-frequent-elements" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-kth-largest-element-in-an-array" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/02/top-k-frequent-elements/" class="article-date">
-  <time datetime="2016-05-02T13:55:47.000Z" itemprop="datePublished">2016-05-02</time>
+    <a href="/2016/05/14/kth-largest-element-in-an-array/" class="article-date">
+  <time datetime="2016-05-14T13:55:56.000Z" itemprop="datePublished">2016-05-14</time>
 </a>
     
   </div>
@@ -79,7 +79,7 @@ Note:You may assume k is always valid, 1 ≤ k ≤ number of unique eleme">
         
   
     <h1 class="article-title" itemprop="name">
-      347. Top K Frequent Elements
+      215. Kth Largest Element in an Array
     </h1>
   
 
@@ -87,16 +87,15 @@ Note:You may assume k is always valid, 1 ≤ k ≤ number of unique eleme">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Given a non-empty array of integers, return the k most frequent elements.</p>
-<p>For example,<br>Given <code>[1,1,1,2,2,3]</code> and k = 2, return <code>[1,2]</code>.</p>
-<p>Note:<br>You may assume k is always valid, 1 ≤ k ≤ number of unique elements.<br>Your algorithm’s time complexity <strong>must be</strong> better than O(n log n), where n is the array’s size.</p>
-<p>思路: 选k个最频繁的元素，首先肯定是先对数组元素计数，后续如何选取</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">topKFrequent</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br></pre></td></tr></table></figure>
+        <p>Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.</p>
+<p>For example,<br>Given <code>[3,2,1,5,6,4]</code> and k = 2, return 5.</p>
+<p>Note:<br>You may assume k is always valid, 1 ≤ k ≤ array’s length.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findKthLargest</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/02/top-k-frequent-elements/" data-id="cio79ufzi000byjo9ur6rz5rh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/14/kth-largest-element-in-an-array/" data-id="cio79ug26001tyjo9pt9thexp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -107,15 +106,11 @@ Note:You may assume k is always valid, 1 ≤ k ≤ number of unique eleme">
     
 <nav id="article-nav">
   
-    <a href="/2016/05/08/design-tic-tac-toe/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          348. Design Tic-Tac-Toe
-        
-      </div>
-    </a>
   
+    <a href="/2016/05/13/missing-ranges/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">163. Missing Ranges</div>
+    </a>
   
 </nav>
 
