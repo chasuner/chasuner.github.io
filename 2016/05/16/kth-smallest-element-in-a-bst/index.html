@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>301. Remove Invalid Parentheses | Hexo</title>
+  <title>230. Kth Smallest Element in a BST | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Remove the minimum number of invalid parentheses in order to make the input string valid. Return all possible results.
-Note: The input string may contain letters other than the parentheses ( and ).
-Ex">
+  <meta name="description" content="Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.
+Note:You may assume k is always valid, 1 ≤ k ≤ BST’s total elements.
+Follow up:What if the BST is modif">
 <meta property="og:type" content="article">
-<meta property="og:title" content="301. Remove Invalid Parentheses">
-<meta property="og:url" content="http://yoursite.com/2016/05/11/remove-invalid-parentheses/index.html">
+<meta property="og:title" content="230. Kth Smallest Element in a BST">
+<meta property="og:url" content="http://yoursite.com/2016/05/16/kth-smallest-element-in-a-bst/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Remove the minimum number of invalid parentheses in order to make the input string valid. Return all possible results.
-Note: The input string may contain letters other than the parentheses ( and ).
-Ex">
+<meta property="og:description" content="Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.
+Note:You may assume k is always valid, 1 ≤ k ≤ BST’s total elements.
+Follow up:What if the BST is modif">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="301. Remove Invalid Parentheses">
-<meta name="twitter:description" content="Remove the minimum number of invalid parentheses in order to make the input string valid. Return all possible results.
-Note: The input string may contain letters other than the parentheses ( and ).
-Ex">
+<meta name="twitter:title" content="230. Kth Smallest Element in a BST">
+<meta name="twitter:description" content="Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.
+Note:You may assume k is always valid, 1 ≤ k ≤ BST’s total elements.
+Follow up:What if the BST is modif">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -65,10 +65,10 @@ Ex">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-remove-invalid-parentheses" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-kth-smallest-element-in-a-bst" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/11/remove-invalid-parentheses/" class="article-date">
-  <time datetime="2016-05-11T08:43:17.000Z" itemprop="datePublished">2016-05-11</time>
+    <a href="/2016/05/16/kth-smallest-element-in-a-bst/" class="article-date">
+  <time datetime="2016-05-15T17:14:02.000Z" itemprop="datePublished">2016-05-16</time>
 </a>
     
   </div>
@@ -79,7 +79,7 @@ Ex">
         
   
     <h1 class="article-title" itemprop="name">
-      301. Remove Invalid Parentheses
+      230. Kth Smallest Element in a BST
     </h1>
   
 
@@ -87,15 +87,15 @@ Ex">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Remove the minimum number of invalid parentheses in order to make the input string valid. Return all possible results.</p>
-<p>Note: The input string may contain letters other than the parentheses ( and ).</p>
-<p><strong>Examples</strong>:<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"()())()"</span> -&gt; [<span class="string">"()()()"</span>, <span class="string">"(())()"</span>]</span><br><span class="line"><span class="string">"(a)())()"</span> -&gt; [<span class="string">"(a)()()"</span>, <span class="string">"(a())()"</span>]</span><br><span class="line"><span class="string">")("</span> -&gt; [<span class="string">""</span>]</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeInvalidParentheses</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type s: str</span><br><span class="line">        :rtype: List[str]</span><br><span class="line">        """</span></span><br></pre></td></tr></table></figure>
+        <p>Given a binary search tree, write a function <code>kthSmallest</code> to find the kth smallest element in it.</p>
+<p>Note:<br>You may assume k is always valid, 1 ≤ k ≤ BST’s total elements.</p>
+<p>Follow up:<br>What if the BST is modified (insert/delete operations) often and you need to find the kth smallest frequently? How would you optimize the kthSmallest routine?</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">kthSmallest</span><span class="params">(self, root, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type root: TreeNode</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        cur, stack, count = root, [], <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> stack <span class="keyword">or</span> cur:</span><br><span class="line">            <span class="keyword">while</span> cur:</span><br><span class="line">                stack.append(cur)</span><br><span class="line">                cur = cur.left</span><br><span class="line">            <span class="keyword">if</span> stack:</span><br><span class="line">                cur = stack.pop()</span><br><span class="line">                count += <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> count == k:</span><br><span class="line">                    <span class="keyword">return</span> cur.val</span><br><span class="line">                cur = cur.right</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/11/remove-invalid-parentheses/" data-id="cio9f1hws000wv5qjgj3yw3lb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/16/kth-smallest-element-in-a-bst/" data-id="cio9f1hxc001wv5qj5ofukph9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -106,19 +106,10 @@ Ex">
     
 <nav id="article-nav">
   
-    <a href="/2016/05/11/lowest-common-ancestor-of-a-binary-tree/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          236. Lowest Common Ancestor of a Binary Tree
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/05/10/minimum-height-trees/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/05/15/word-search-ii/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">310. Minimum Height Trees</div>
+      <div class="article-nav-title">212. Word Search II</div>
     </a>
   
 </nav>
