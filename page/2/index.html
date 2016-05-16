@@ -61,6 +61,96 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-search-a-2d-matrix-ii" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/12/search-a-2d-matrix-ii/" class="article-date">
+  <time datetime="2016-05-12T06:52:22.000Z" itemprop="datePublished">2016-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/12/search-a-2d-matrix-ii/">240. Search a 2D Matrix II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:</p>
+<ul>
+<li>Integers in each row are sorted in ascending from left to right.</li>
+<li>Integers in each column are sorted in ascending from top to bottom.<br>For example,</li>
+</ul>
+<p>Consider the following matrix:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  [<span class="number">1</span>,   <span class="number">4</span>,  <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>],</span><br><span class="line">  [<span class="number">2</span>,   <span class="number">5</span>,  <span class="number">8</span>, <span class="number">12</span>, <span class="number">19</span>],</span><br><span class="line">  [<span class="number">3</span>,   <span class="number">6</span>,  <span class="number">9</span>, <span class="number">16</span>, <span class="number">22</span>],</span><br><span class="line">  [<span class="number">10</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">17</span>, <span class="number">24</span>],</span><br><span class="line">  [<span class="number">18</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">26</span>, <span class="number">30</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>Given <strong>target</strong> = <code>5</code>, return <code>true</code>.</p>
+<p>Given <strong>target</strong> = <code>20</code>, return <code>false</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">searchMatrix</span><span class="params">(self, matrix, target)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type matrix: List[List[int]]</span><br><span class="line">        :type target: int</span><br><span class="line">        :rtype: bool</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> matrix:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        m, n = len(matrix), len(matrix[<span class="number">0</span>])</span><br><span class="line">        i, j = <span class="number">0</span>, n - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; m <span class="keyword">and</span> j &gt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> matrix[i][j] == target:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">            <span class="keyword">if</span> matrix[i][j] &gt; target:</span><br><span class="line">                j -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/12/search-a-2d-matrix-ii/" data-id="cio9rp3md000t9rqj3ft1pmr7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-serialize-and-deserialize-binary-tree" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/12/serialize-and-deserialize-binary-tree/" class="article-date">
+  <time datetime="2016-05-12T06:37:26.000Z" itemprop="datePublished">2016-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/12/serialize-and-deserialize-binary-tree/">297. Serialize and Deserialize Binary Tree</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.</p>
+<p>Design an algorithm to serialize and deserialize a binary tree. There is no restriction on how your serialization/deserialization algorithm should work. You just need to ensure that a binary tree can be serialized to a string and this string can be deserialized to the original tree structure.</p>
+<p>For example, you may serialize the following tree<br><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="number">1</span></span><br><span class="line"> / <span class="string">\</span></span><br><span class="line"><span class="number">2</span>   <span class="number">3</span></span><br><span class="line">   / <span class="string">\</span></span><br><span class="line">  <span class="number">4</span>   <span class="number">5</span></span><br></pre></td></tr></table></figure></p>
+<p>as <code>&quot;[1,2,3,null,null,4,5]&quot;</code>, just the same as <a href="https://leetcode.com/faq/#binary-tree" target="_blank" rel="external">how LeetCode OJ serializes a binary tree</a>. You do not necessarily need to follow this format, so please be creative and come up with different approaches yourself.<br>Note: Do not use class member/global/static variables to store states. Your serialize and deserialize algorithms should be stateless.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(n)</span></span><br><span class="line"><span class="comment"># Space: O(h)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Codec</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">serialize</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="string">"""Encodes a tree to a single string.</span><br><span class="line"></span><br><span class="line">        :type root: TreeNode</span><br><span class="line">        :rtype: str</span><br><span class="line">        """</span></span><br><span class="line">        res = []</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">ser</span><span class="params">(root, res)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">                res.append(<span class="string">'#'</span>)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            res.append(str(root.val))</span><br><span class="line">            ser(root.left, res)</span><br><span class="line">            ser(root.right, res)</span><br><span class="line"></span><br><span class="line">        ser(root, res)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">','</span>.join(res)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">deserialize</span><span class="params">(self, data)</span>:</span></span><br><span class="line">        <span class="string">"""Decodes your encoded data to tree.</span><br><span class="line"></span><br><span class="line">        :type data: str</span><br><span class="line">        :rtype: TreeNode</span><br><span class="line">        """</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">deser</span><span class="params">(vals)</span>:</span></span><br><span class="line">            val = next(vals)</span><br><span class="line">            <span class="keyword">if</span> val == <span class="string">'#'</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">            node = TreeNode(int(val))</span><br><span class="line">            node.left = deser(vals)</span><br><span class="line">            node.right = deser(vals)</span><br><span class="line">            <span class="keyword">return</span> node</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">separate</span><span class="params">(s, p)</span>:</span></span><br><span class="line">            start = <span class="number">0</span></span><br><span class="line">            <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">                idx = s.find(p, start)</span><br><span class="line">                <span class="keyword">if</span> idx == -<span class="number">1</span>:</span><br><span class="line">                    <span class="keyword">yield</span> s[start:]</span><br><span class="line">                    <span class="keyword">return</span></span><br><span class="line">                <span class="keyword">yield</span> s[start: idx]</span><br><span class="line">                start = idx + len(p)</span><br><span class="line"></span><br><span class="line">        root = deser(iter(separate(data, <span class="string">','</span>)))</span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Your Codec object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># codec = Codec()</span></span><br><span class="line"><span class="comment"># codec.deserialize(codec.serialize(root))</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/12/serialize-and-deserialize-binary-tree/" data-id="cio9rp3m8000n9rqjo33urkjq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-longest-increasing-subsequence" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/12/longest-increasing-subsequence/" class="article-date">
@@ -92,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/longest-increasing-subsequence/" data-id="cio9f1hxb001tv5qjtl0wc5nr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/longest-increasing-subsequence/" data-id="cio9rp3mz001t9rqj65camhxn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -135,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/11/range-sum-query-2d-immutable/" data-id="cio9f1hww0012v5qju5ydc332" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/11/range-sum-query-2d-immutable/" data-id="cio9rp3mj00129rqjmfajp7pb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -178,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/11/lowest-common-ancestor-of-a-binary-tree/" data-id="cio9f1hx8001nv5qjbbasrenn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/11/lowest-common-ancestor-of-a-binary-tree/" data-id="cio9rp3mw001n9rqjlkoasm0f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -220,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/11/remove-invalid-parentheses/" data-id="cio9f1hws000wv5qjgj3yw3lb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/11/remove-invalid-parentheses/" data-id="cio9rp3mf000w9rqjpy8kfco5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -268,7 +358,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/10/minimum-height-trees/" data-id="cio9f1hx3001ev5qj4v0wshez" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/10/minimum-height-trees/" data-id="cio9rp3ms001e9rqjtsnbvgg9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -313,7 +403,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/10/burst-balloons/" data-id="cio9f1hue0000v5qje520bzfp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/10/burst-balloons/" data-id="cio9rp3nh002k9rqjc8nm3tud" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -355,7 +445,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/10/remove-duplicate-letters/" data-id="cio9f1hwu000zv5qj1hrk0s0q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/10/remove-duplicate-letters/" data-id="cio9rp3mh000z9rqjsspr8z80" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -398,93 +488,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/10/maximum-product-of-word-lengths/" data-id="cio9f1hx5001hv5qjln37odel" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-coin-change" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/10/coin-change/" class="article-date">
-  <time datetime="2016-05-10T03:47:41.000Z" itemprop="datePublished">2016-05-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/10/coin-change/">322. Coin Change</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return <code>-1</code>.</p>
-<p>Example 1:<br>coins = <code>[1, 2, 5]</code>, amount = <code>11</code><br>return <code>3</code> (11 = 5 + 5 + 1)</p>
-<p>Example 2:<br>coins = <code>[2]</code>, amount = <code>3</code><br>return <code>-1</code>.</p>
-<p>Note:<br>You may assume that you have an infinite number of each kind of coin.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(n * k), n is the number of coins, k is the amount of money</span></span><br><span class="line"><span class="comment"># Space: O(k)</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">coinChange</span><span class="params">(self, coins, amount)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type coins: List[int]</span><br><span class="line">        :type amount: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        res = -<span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> coins:</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> amount:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        INF = <span class="number">0x7fffffff</span></span><br><span class="line">        dp = [INF] * (amount + <span class="number">1</span>)</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(dp)):</span><br><span class="line">            <span class="keyword">if</span> dp[i] != INF:</span><br><span class="line">                <span class="keyword">for</span> coin <span class="keyword">in</span> coins:</span><br><span class="line">                    <span class="keyword">if</span> i + coin &lt;= amount:</span><br><span class="line">                        dp[i + coin] = min(dp[i + coin], dp[i] + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> dp[amount] != INF:</span><br><span class="line">            res = dp[amount]</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/10/coin-change/" data-id="cio9f1hxq002hv5qj51pf0kks" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-create-maximum-number" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/09/create-maximum-number/" class="article-date">
-  <time datetime="2016-05-09T15:20:42.000Z" itemprop="datePublished">2016-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/09/create-maximum-number/">321. Create Maximum Number</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given two arrays of length <code>m</code> and <code>n</code> with digits <code>0-9</code> representing two numbers. Create the maximum number of length <code>k &lt;= m + n</code> from digits of the two. The relative order of the digits from the same array must be preserved. Return an array of the <code>k</code> digits. You should try to optimize your time and space complexity.</p>
-<p>Example 1:<br>nums1 = <code>[3, 4, 6, 5]</code><br>nums2 = <code>[9, 1, 2, 5, 8, 3]</code><br>k = <code>5</code><br>return <code>[9, 8, 6, 5, 3]</code></p>
-<p>Example 2:<br>nums1 = <code>[6, 7]</code><br>nums2 = <code>[6, 0, 4]</code><br>k = <code>5</code><br>return <code>[6, 7, 6, 0, 4]</code></p>
-<p>Example 3:<br>nums1 = <code>[3, 9]</code><br>nums2 = <code>[8, 9]</code><br>k = <code>3</code><br>return <code>[9, 8, 9]</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(k * (m + n + k)) ~ O(k * (m + n + k^2))</span></span><br><span class="line"><span class="comment"># Space: O(m + n + k^2)</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxNumber</span><span class="params">(self, nums1, nums2, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums1: List[int]</span><br><span class="line">        :type nums2: List[int]</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">if</span> k &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        m, n = len(nums1), len(nums2)</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">get_result</span><span class="params">(nums, start, end, d)</span>:</span></span><br><span class="line">            d[end] = get_max_digit(nums, end)</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(start, end)[::-<span class="number">1</span>]:</span><br><span class="line">                d[i] = get_sub_digit(d[i + <span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">get_max_digit</span><span class="params">(nums, end)</span>:</span></span><br><span class="line">            res = []</span><br><span class="line">            drop = len(nums) - end</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(nums)):</span><br><span class="line">                <span class="keyword">while</span> drop &gt; <span class="number">0</span> <span class="keyword">and</span> res <span class="keyword">and</span> nums[i] &gt; res[-<span class="number">1</span>]:</span><br><span class="line">                    res.pop()</span><br><span class="line">                    drop -= <span class="number">1</span></span><br><span class="line">                res.append(nums[i])</span><br><span class="line">            <span class="keyword">return</span> res[:end]</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">get_sub_digit</span><span class="params">(nums)</span>:</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">                <span class="keyword">if</span> i == len(nums) - <span class="number">1</span> <span class="keyword">or</span> nums[i] &lt; nums[i + <span class="number">1</span>]:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">return</span> nums[:i] + nums[i + <span class="number">1</span>:]</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(a, b)</span>:</span></span><br><span class="line">            <span class="keyword">return</span> [max(a, b).pop(<span class="number">0</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> xrange(len(a) + len(b))]</span><br><span class="line"></span><br><span class="line">        d1, d2 = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> range(k + <span class="number">1</span>)], [[] <span class="keyword">for</span> _ <span class="keyword">in</span> range(k + <span class="number">1</span>)]</span><br><span class="line">        get_result(nums1, max(<span class="number">0</span>, k - n), min(k, m), d1)</span><br><span class="line">        get_result(nums2, max(<span class="number">0</span>, k - m), min(k, n), d2)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max(merge(d1[i], d2[k - i]) <span class="keyword">for</span> i <span class="keyword">in</span> xrange(max(<span class="number">0</span>, k - n), min(k, m) + <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/create-maximum-number/" data-id="cio9f1hxj0028v5qjr1gc4syt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/10/maximum-product-of-word-lengths/" data-id="cio9rp3mt001h9rqj8o1vqdjv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -498,7 +502,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -511,7 +515,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">30</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">30</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">32</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">32</span></li></ul>
     </div>
   </div>
 
@@ -529,7 +533,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">30</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">32</span></li></ul>
     </div>
   </div>
 
@@ -541,6 +545,14 @@
       <ul>
         
           <li>
+            <a href="/2016/05/16/basic-calculator-ii/">227. Basic Calculator II</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/16/basic-calculator/">224. Basic Calculator</a>
+          </li>
+        
+          <li>
             <a href="/2016/05/16/kth-smallest-element-in-a-bst/">230. Kth Smallest Element in a BST</a>
           </li>
         
@@ -550,14 +562,6 @@
         
           <li>
             <a href="/2016/05/14/kth-largest-element-in-an-array/">215. Kth Largest Element in an Array</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/13/missing-ranges/">163. Missing Ranges</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/12/single-number-iii/">260. Single Number III</a>
           </li>
         
       </ul>

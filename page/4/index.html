@@ -3,23 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>348. Design Tic-Tac-Toe | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Design a Tic-tac-toe game that is played between two players on a n x n grid.
-You may assume the following rules:
-A move is guaranteed to be valid and is placed on an empty block.Once a winning condit">
-<meta property="og:type" content="article">
-<meta property="og:title" content="348. Design Tic-Tac-Toe">
-<meta property="og:url" content="http://yoursite.com/2016/05/08/design-tic-tac-toe/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Design a Tic-tac-toe game that is played between two players on a n x n grid.
-You may assume the following rules:
-A move is guaranteed to be valid and is placed on an empty block.Once a winning condit">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="348. Design Tic-Tac-Toe">
-<meta name="twitter:description" content="Design a Tic-tac-toe game that is played between two players on a n x n grid.
-You may assume the following rules:
-A move is guaranteed to be valid and is placed on an empty block.Once a winning condit">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -65,7 +59,9 @@ A move is guaranteed to be valid and is placed on an empty block.Once a winning 
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-design-tic-tac-toe" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-design-tic-tac-toe" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/08/design-tic-tac-toe/" class="article-date">
   <time datetime="2016-05-08T15:13:59.000Z" itemprop="datePublished">2016-05-08</time>
@@ -78,8 +74,8 @@ A move is guaranteed to be valid and is placed on an empty block.Once a winning 
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      348. Design Tic-Tac-Toe
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/08/design-tic-tac-toe/">348. Design Tic-Tac-Toe</a>
     </h1>
   
 
@@ -108,29 +104,58 @@ A move is guaranteed to be valid and is placed on an empty block.Once a winning 
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2016/05/08/longest-substring-with-at-most-k-distinct-characters/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          340. Longest Substring with At Most K Distinct Characters
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/05/02/top-k-frequent-elements/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">347. Top K Frequent Elements</div>
-    </a>
-  
-</nav>
+</article>
 
+
+  
+    <article id="post-top-k-frequent-elements" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/02/top-k-frequent-elements/" class="article-date">
+  <time datetime="2016-05-02T13:55:47.000Z" itemprop="datePublished">2016-05-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/02/top-k-frequent-elements/">347. Top K Frequent Elements</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given a non-empty array of integers, return the k most frequent elements.</p>
+<p>For example,<br>Given <code>[1,1,1,2,2,3]</code> and k = 2, return <code>[1,2]</code>.</p>
+<p>Note:<br>You may assume k is always valid, 1 ≤ k ≤ number of unique elements.<br>Your algorithm’s time complexity <strong>must be</strong> better than O(n log n), where n is the array’s size.</p>
+<p>思路: 选k个最频繁的元素，首先肯定是先对数组元素计数，后续如何选取</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">topKFrequent</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/02/top-k-frequent-elements/" data-id="cio9rp3l5000e9rqjcu42k10x" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
   
 </article>
 
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    </nav>
+  
 </section>
         
           <aside id="sidebar">
