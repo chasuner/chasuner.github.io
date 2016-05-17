@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>220. Contains Duplicate III | Hexo</title>
+  <title>241. Different Ways to Add Parentheses | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Given an array of integers, find out whether there are two distinct indices i and j in the array such that the difference between nums[i] and nums[j] is at most t and the difference between i and j is">
+  <meta name="description" content="Given a string of numbers and operators, return all possible results from computing all the different possible ways to group numbers and operators. The valid operators are +, - and *.
+Example 1Input:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="220. Contains Duplicate III">
-<meta property="og:url" content="http://yoursite.com/2016/05/12/contains-duplicate-iii/index.html">
+<meta property="og:title" content="241. Different Ways to Add Parentheses">
+<meta property="og:url" content="http://yoursite.com/2016/05/17/different-ways-to-add-parentheses/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Given an array of integers, find out whether there are two distinct indices i and j in the array such that the difference between nums[i] and nums[j] is at most t and the difference between i and j is">
+<meta property="og:description" content="Given a string of numbers and operators, return all possible results from computing all the different possible ways to group numbers and operators. The valid operators are +, - and *.
+Example 1Input:">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="220. Contains Duplicate III">
-<meta name="twitter:description" content="Given an array of integers, find out whether there are two distinct indices i and j in the array such that the difference between nums[i] and nums[j] is at most t and the difference between i and j is">
+<meta name="twitter:title" content="241. Different Ways to Add Parentheses">
+<meta name="twitter:description" content="Given a string of numbers and operators, return all possible results from computing all the different possible ways to group numbers and operators. The valid operators are +, - and *.
+Example 1Input:">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,10 +62,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-contains-duplicate-iii" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-different-ways-to-add-parentheses" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/12/contains-duplicate-iii/" class="article-date">
-  <time datetime="2016-05-12T09:07:26.000Z" itemprop="datePublished">2016-05-12</time>
+    <a href="/2016/05/17/different-ways-to-add-parentheses/" class="article-date">
+  <time datetime="2016-05-17T03:16:58.000Z" itemprop="datePublished">2016-05-17</time>
 </a>
     
   </div>
@@ -73,7 +76,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      220. Contains Duplicate III
+      241. Different Ways to Add Parentheses
     </h1>
   
 
@@ -81,13 +84,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Given an array of integers, find out whether there are two distinct indices i and j in the array such that the difference between <code>nums[i]</code> and <code>nums[j]</code> is at most t and the difference between i and j is at most k.</p>
+        <p>Given a string of numbers and operators, return all possible results from computing all the different possible ways to group numbers and operators. The valid operators are <code>+</code>, <code>-</code> and <code>*</code>.</p>
+<p>Example 1<br>Input: <code>&quot;2-1-1&quot;</code>.<br><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">((2-1)</span><span class="number">-1</span>) = <span class="number">0</span></span><br><span class="line"><span class="comment">(2-(1-1)</span>) = <span class="number">2</span></span><br></pre></td></tr></table></figure></p>
+<p>Output: <code>[0, 2]</code></p>
+<p>Example 2<br>Input: “2<em>3-4</em>5”<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(2<span class="keyword">*</span>(3-(4<span class="keyword">*</span>5))) = -34</span><br><span class="line">((2<span class="keyword">*</span>3)-(4<span class="keyword">*</span>5)) = -14</span><br><span class="line">((2<span class="keyword">*</span>(3-4))<span class="keyword">*</span>5) = -10</span><br><span class="line">(2<span class="keyword">*</span>((3-4)<span class="keyword">*</span>5)) = -10</span><br><span class="line">(((2<span class="keyword">*</span>3)-4)<span class="keyword">*</span>5) = 10</span><br></pre></td></tr></table></figure></p>
+<p>Output: <code>[-34, -14, -10, -10, 10]</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/contains-duplicate-iii/" data-id="ciobl1bsm002haho9yrwxej6l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/17/different-ways-to-add-parentheses/" data-id="ciobl1bsd0025aho99fvi3nvb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -98,19 +105,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/05/12/single-number-iii/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          260. Single Number III
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/05/12/sliding-window-maximum/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/05/16/basic-calculator-ii/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">239. Sliding Window Maximum</div>
+      <div class="article-nav-title">227. Basic Calculator II</div>
     </a>
   
 </nav>

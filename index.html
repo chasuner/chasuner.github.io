@@ -61,6 +61,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-different-ways-to-add-parentheses" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/17/different-ways-to-add-parentheses/" class="article-date">
+  <time datetime="2016-05-17T03:16:58.000Z" itemprop="datePublished">2016-05-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/17/different-ways-to-add-parentheses/">241. Different Ways to Add Parentheses</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given a string of numbers and operators, return all possible results from computing all the different possible ways to group numbers and operators. The valid operators are <code>+</code>, <code>-</code> and <code>*</code>.</p>
+<p>Example 1<br>Input: <code>&quot;2-1-1&quot;</code>.<br><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">((2-1)</span><span class="number">-1</span>) = <span class="number">0</span></span><br><span class="line"><span class="comment">(2-(1-1)</span>) = <span class="number">2</span></span><br></pre></td></tr></table></figure></p>
+<p>Output: <code>[0, 2]</code></p>
+<p>Example 2<br>Input: “2<em>3-4</em>5”<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(2<span class="keyword">*</span>(3-(4<span class="keyword">*</span>5))) = -34</span><br><span class="line">((2<span class="keyword">*</span>3)-(4<span class="keyword">*</span>5)) = -14</span><br><span class="line">((2<span class="keyword">*</span>(3-4))<span class="keyword">*</span>5) = -10</span><br><span class="line">(2<span class="keyword">*</span>((3-4)<span class="keyword">*</span>5)) = -10</span><br><span class="line">(((2<span class="keyword">*</span>3)-4)<span class="keyword">*</span>5) = 10</span><br></pre></td></tr></table></figure></p>
+<p>Output: <code>[-34, -14, -10, -10, 10]</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/17/different-ways-to-add-parentheses/" data-id="ciobl1bsd0025aho99fvi3nvb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-basic-calculator-ii" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/16/basic-calculator-ii/" class="article-date">
@@ -88,12 +132,12 @@
 <p>You may assume that the given expression is always valid.</p>
 <p>Some examples:<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"3+2*2"</span> = <span class="number">7</span></span><br><span class="line"><span class="string">" 3/2 "</span> = <span class="number">1</span></span><br><span class="line"><span class="string">" 3+5 / 2 "</span> = <span class="number">5</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>Note: Do not</strong> use the <code>eval</code> built-in library function.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calculate</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type s: str</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        s1 = s.replace(<span class="string">' '</span>, <span class="string">''</span>)</span><br><span class="line">        res, f1, f2 = <span class="number">0</span>, <span class="string">'+'</span>, <span class="keyword">None</span></span><br><span class="line">        a2, b = <span class="keyword">None</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(s1)):</span><br><span class="line">            <span class="keyword">if</span> i == len(s1) - <span class="number">1</span> <span class="keyword">or</span> s1[i] <span class="keyword">in</span> <span class="string">'+-*/'</span>:</span><br><span class="line">                <span class="keyword">if</span> i == len(s1) - <span class="number">1</span>:</span><br><span class="line">                    d = int(s1[b:])</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    d = int(s1[b:i])</span><br><span class="line">                <span class="keyword">if</span> f2 <span class="keyword">and</span> f2 <span class="keyword">in</span> <span class="string">'*/'</span> <span class="keyword">and</span> a2:</span><br><span class="line">                    <span class="keyword">if</span> f2 == <span class="string">'*'</span>:</span><br><span class="line">                        a2 *= d</span><br><span class="line">                    <span class="keyword">elif</span> f2 == <span class="string">'/'</span>:</span><br><span class="line">                        a2 //= d</span><br><span class="line">                    f2 = <span class="keyword">None</span></span><br><span class="line">                <span class="keyword">if</span> s1[i] <span class="keyword">in</span> <span class="string">'*/'</span>:</span><br><span class="line">                    <span class="keyword">if</span> f2 == <span class="keyword">None</span>:</span><br><span class="line">                        f2 = s1[i]</span><br><span class="line">                    <span class="keyword">if</span> a2 == <span class="keyword">None</span>:</span><br><span class="line">                        a2 = d</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">if</span> a2 != <span class="keyword">None</span>:</span><br><span class="line">                        d = a2</span><br><span class="line">                        a2 = <span class="keyword">None</span></span><br><span class="line">                    <span class="keyword">if</span> f1 == <span class="string">'-'</span>:</span><br><span class="line">                        res -= d</span><br><span class="line">                    <span class="keyword">elif</span> f1 == <span class="string">'+'</span>:</span><br><span class="line">                        res += d</span><br><span class="line">                    f1 = s1[i]</span><br><span class="line">                b = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calculate</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type s: str</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        s1 = s.replace(<span class="string">' '</span>, <span class="string">''</span>)</span><br><span class="line">        res, f1, f2 = <span class="number">0</span>, <span class="string">'+'</span>, <span class="keyword">None</span></span><br><span class="line">        a2, b = <span class="keyword">None</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(s1)):</span><br><span class="line">            <span class="keyword">if</span> i == len(s1) - <span class="number">1</span> <span class="keyword">or</span> s1[i] <span class="keyword">in</span> <span class="string">'+-*/'</span>:</span><br><span class="line">                <span class="keyword">if</span> i == len(s1) - <span class="number">1</span>:</span><br><span class="line">                    d = int(s1[b:])</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    d = int(s1[b:i])</span><br><span class="line">                <span class="keyword">if</span> f2 <span class="keyword">and</span> f2 <span class="keyword">in</span> <span class="string">'*/'</span> <span class="keyword">and</span> a2:</span><br><span class="line">                    <span class="keyword">if</span> f2 == <span class="string">'*'</span>:</span><br><span class="line">                        a2 *= d</span><br><span class="line">                    <span class="keyword">elif</span> f2 == <span class="string">'/'</span>:</span><br><span class="line">                        a2 //= d</span><br><span class="line">                    f2 = <span class="keyword">None</span></span><br><span class="line">                <span class="keyword">if</span> s1[i] <span class="keyword">in</span> <span class="string">'*/'</span>:</span><br><span class="line">                    <span class="keyword">if</span> f2 == <span class="keyword">None</span>:</span><br><span class="line">                        f2 = s1[i]</span><br><span class="line">                    <span class="keyword">if</span> a2 == <span class="keyword">None</span>:</span><br><span class="line">                        a2 = d</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">if</span> a2 != <span class="keyword">None</span>:</span><br><span class="line">                        d = a2</span><br><span class="line">                        a2 = <span class="keyword">None</span></span><br><span class="line">                    <span class="keyword">if</span> f1 == <span class="string">'-'</span>:</span><br><span class="line">                        res -= d</span><br><span class="line">                    <span class="keyword">elif</span> f1 == <span class="string">'+'</span>:</span><br><span class="line">                        res += d</span><br><span class="line">                    f1 = s1[i]</span><br><span class="line">                b = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/16/basic-calculator-ii/" data-id="cio9rp3j000009rqj0zs5gnnx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/16/basic-calculator-ii/" data-id="ciobl1bp80000aho9refa689w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -137,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/16/basic-calculator/" data-id="cio9rp3ni002n9rqjy6iamnr2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/16/basic-calculator/" data-id="ciobl1bsr002qaho9cyldplan" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -179,7 +223,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/16/kth-smallest-element-in-a-bst/" data-id="cio9rp3n0001w9rqj70s71hco" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/16/kth-smallest-element-in-a-bst/" data-id="ciobl1bs8001waho99isuakus" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -222,7 +266,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/15/word-search-ii/" data-id="cio9rp3jd00059rqjhx3dqizy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/15/word-search-ii/" data-id="ciobl1bpi0005aho9vaaz9y0u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -264,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/14/kth-largest-element-in-an-array/" data-id="cio9rp3n2001z9rqj72e2usdi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/14/kth-largest-element-in-an-array/" data-id="ciobl1bsa001zaho96s5jllj3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -305,7 +349,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/13/missing-ranges/" data-id="cio9rp3mp001b9rqjmvcgr8ne" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/13/missing-ranges/" data-id="ciobl1bry001baho9fmqggm46" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -348,7 +392,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/single-number-iii/" data-id="cio9rp3m6000k9rqjc2502gla" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/single-number-iii/" data-id="ciobl1bqz000kaho9a74zjbn7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -388,7 +432,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/contains-duplicate-iii/" data-id="cio9rp3nd002e9rqjqcbmv0ch" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/contains-duplicate-iii/" data-id="ciobl1bsm002haho9yrwxej6l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -432,47 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/sliding-window-maximum/" data-id="cio9rp3m4000h9rqj6ccot5pg" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-majority-element-ii" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/12/majority-element-ii/" class="article-date">
-  <time datetime="2016-05-12T08:25:33.000Z" itemprop="datePublished">2016-05-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/12/majority-element-ii/">229. Majority Element II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given an integer array of size n, find all elements that appear more than <code>⌊ n/3 ⌋</code> times. The algorithm should run in linear time and in O(1) space.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">majorityElement</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br><span class="line">        k, n, hash = <span class="number">3</span>, len(nums), &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> num <span class="keyword">not</span> <span class="keyword">in</span> hash:</span><br><span class="line">                hash[num] = <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                hash[num] += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> len(hash) == k:</span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> hash.keys():</span><br><span class="line">                    hash[i] -= <span class="number">1</span></span><br><span class="line">                    <span class="keyword">if</span> hash[i] == <span class="number">0</span>:</span><br><span class="line">                        <span class="keyword">del</span> hash[i]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> hash:</span><br><span class="line">            hash[i] = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> num <span class="keyword">in</span> hash:</span><br><span class="line">                hash[num] += <span class="number">1</span></span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> hash:</span><br><span class="line">            <span class="keyword">if</span> hash[i] &gt; n / k:</span><br><span class="line">                res.append(i)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/majority-element-ii/" data-id="cio9rp3mv001k9rqj707o2j2d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/sliding-window-maximum/" data-id="ciobl1bpw000haho92y9ha97a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -499,7 +503,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">32</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">32</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">33</span></li></ul>
     </div>
   </div>
 
@@ -517,7 +521,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">32</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">33</span></li></ul>
     </div>
   </div>
 
@@ -527,6 +531,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/05/17/different-ways-to-add-parentheses/">241. Different Ways to Add Parentheses</a>
+          </li>
         
           <li>
             <a href="/2016/05/16/basic-calculator-ii/">227. Basic Calculator II</a>
@@ -542,10 +550,6 @@
         
           <li>
             <a href="/2016/05/15/word-search-ii/">212. Word Search II</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/14/kth-largest-element-in-an-array/">215. Kth Largest Element in an Array</a>
           </li>
         
       </ul>
