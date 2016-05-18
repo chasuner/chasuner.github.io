@@ -61,6 +61,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-sliding-window-maximum" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/12/sliding-window-maximum/" class="article-date">
+  <time datetime="2016-05-12T08:34:53.000Z" itemprop="datePublished">2016-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/12/sliding-window-maximum/">239. Sliding Window Maximum</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given an array nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.</p>
+<p>For example,<br>Given nums = <code>[1,3,-1,-3,5,3,6,7]</code>, and k = 3.<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Window <span class="attribute">position</span>                Max</span><br><span class="line">---------------               -----</span><br><span class="line"><span class="attr_selector">[1  3  -1]</span> -3  5  3  6  7       3</span><br><span class="line"> 1 <span class="attr_selector">[3  -1  -3]</span> 5  3  6  7       3</span><br><span class="line"> 1  3 <span class="attr_selector">[-1  -3  5]</span> 3  6  7       5</span><br><span class="line"> 1  3  -1 <span class="attr_selector">[-3  5  3]</span> 6  7       5</span><br><span class="line"> 1  3  -1  -3 <span class="attr_selector">[5  3  6]</span> 7       6</span><br><span class="line"> 1  3  -1  -3  5 <span class="attr_selector">[3  6  7]</span>      7</span><br></pre></td></tr></table></figure></p>
+<p>Therefore, return the max sliding window as <code>[3,3,5,5,6,7]</code>.</p>
+<p>Note:<br>You may assume k is always valid, ie: 1 ≤ k ≤ input array’s size for non-empty array.</p>
+<p>Follow up:<br>Could you solve it in linear time?</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(n)</span></span><br><span class="line"><span class="comment"># Space: O(k)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxSlidingWindow</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br><span class="line">        res = []</span><br><span class="line">        queue = collections.deque()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(k):</span><br><span class="line">            <span class="keyword">while</span> queue <span class="keyword">and</span> nums[i] &gt;= nums[queue[-<span class="number">1</span>]]:</span><br><span class="line">                queue.pop()</span><br><span class="line">            queue.append(i)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(k, len(nums)):</span><br><span class="line">            res.append(nums[queue[<span class="number">0</span>]])</span><br><span class="line">            <span class="keyword">while</span> queue <span class="keyword">and</span> nums[i] &gt;= nums[queue[-<span class="number">1</span>]]:</span><br><span class="line">                queue.pop()</span><br><span class="line">            <span class="keyword">while</span> queue <span class="keyword">and</span> queue[<span class="number">0</span>] &lt;= i - k:</span><br><span class="line">                queue.popleft()</span><br><span class="line">            queue.append(i)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> queue:</span><br><span class="line">            res.append(nums[queue[<span class="number">0</span>]])</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/12/sliding-window-maximum/" data-id="ciocl7oe7000kbpqjngszi4qp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-majority-element-ii" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/12/majority-element-ii/" class="article-date">
@@ -89,7 +133,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/majority-element-ii/" data-id="ciobl1bs3001kaho9xtt6pjnw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/majority-element-ii/" data-id="ciocl7ofh001nbpqjvoxcq2pu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -136,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/search-a-2d-matrix-ii/" data-id="ciobl1brn000taho9rz7j7mxa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/search-a-2d-matrix-ii/" data-id="ciocl7of0000wbpqjsfo690qb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -179,7 +223,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/serialize-and-deserialize-binary-tree/" data-id="ciobl1brh000naho946eiivui" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/serialize-and-deserialize-binary-tree/" data-id="ciocl7oew000qbpqj409l31er" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -222,7 +266,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/longest-increasing-subsequence/" data-id="ciobl1bs7001taho9d37qucvf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/longest-increasing-subsequence/" data-id="ciocl7ofm001wbpqjq01w1yr8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -265,7 +309,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/11/range-sum-query-2d-immutable/" data-id="ciobl1brt0012aho991dbnt2z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/11/range-sum-query-2d-immutable/" data-id="ciocl7of50015bpqjr5eo4vre" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -308,7 +352,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/11/lowest-common-ancestor-of-a-binary-tree/" data-id="ciobl1bs4001naho9sbuuop0r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/11/lowest-common-ancestor-of-a-binary-tree/" data-id="ciocl7ofi001qbpqjtvuza7ji" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -350,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/11/remove-invalid-parentheses/" data-id="ciobl1brp000waho9smnu07yo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/11/remove-invalid-parentheses/" data-id="ciocl7of2000zbpqj7geq86z0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -398,7 +442,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/10/minimum-height-trees/" data-id="ciobl1brz001eaho98qfgh33q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/10/minimum-height-trees/" data-id="ciocl7ofe001hbpqjza23eccs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -443,49 +487,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/10/burst-balloons/" data-id="ciobl1bsp002naho9ads81zqf" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-remove-duplicate-letters" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/10/remove-duplicate-letters/" class="article-date">
-  <time datetime="2016-05-10T07:08:31.000Z" itemprop="datePublished">2016-05-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/10/remove-duplicate-letters/">316. Remove Duplicate Letters</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given a string which contains only lowercase letters, remove duplicate letters so that every letter appear once and only once. You must make sure your result is the smallest in lexicographical order among all possible results.</p>
-<p><strong>Example</strong>:<br>Given <code>&quot;bcabc&quot;</code><br>Return <code>&quot;abc&quot;</code></p>
-<p>Given <code>&quot;cbacdcbc&quot;</code><br>Return <code>&quot;acdb&quot;</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(n)</span></span><br><span class="line"><span class="comment"># Space: O(k), k is size of the alphabet</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeDuplicateLetters</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type s: str</span><br><span class="line">        :rtype: str</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">            <span class="keyword">return</span> s</span><br><span class="line">        visit = [<span class="number">0</span>] * <span class="number">26</span></span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> s:</span><br><span class="line">            visit[ord(c) - ord(<span class="string">'a'</span>)] += <span class="number">1</span></span><br><span class="line">        stack, stk_set = [], set()</span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> s:</span><br><span class="line">            visit[ord(c) - ord(<span class="string">'a'</span>)] -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> c <span class="keyword">in</span> stack:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">while</span> stack <span class="keyword">and</span> c &lt; stack[-<span class="number">1</span>] <span class="keyword">and</span> visit[ord(stack[-<span class="number">1</span>]) - ord(<span class="string">'a'</span>)] &gt; <span class="number">0</span>:</span><br><span class="line">                stk_set.discard(stack.pop())</span><br><span class="line">            stack.append(c)</span><br><span class="line">            stk_set.add(c)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>.join(stack)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/10/remove-duplicate-letters/" data-id="ciobl1brr000zaho9i65pd8v9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/10/burst-balloons/" data-id="ciocl7og2002qbpqj701no2hu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -512,7 +514,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">33</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">34</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">34</span></li></ul>
     </div>
   </div>
 
@@ -530,7 +532,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">33</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">34</span></li></ul>
     </div>
   </div>
 
@@ -540,6 +542,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/05/18/ugly-number-ii/">264. Ugly Number II</a>
+          </li>
         
           <li>
             <a href="/2016/05/17/different-ways-to-add-parentheses/">241. Different Ways to Add Parentheses</a>
@@ -555,10 +561,6 @@
         
           <li>
             <a href="/2016/05/16/kth-smallest-element-in-a-bst/">230. Kth Smallest Element in a BST</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/15/word-search-ii/">212. Word Search II</a>
           </li>
         
       </ul>

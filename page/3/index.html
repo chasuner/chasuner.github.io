@@ -61,6 +61,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-remove-duplicate-letters" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/10/remove-duplicate-letters/" class="article-date">
+  <time datetime="2016-05-10T07:08:31.000Z" itemprop="datePublished">2016-05-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/10/remove-duplicate-letters/">316. Remove Duplicate Letters</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given a string which contains only lowercase letters, remove duplicate letters so that every letter appear once and only once. You must make sure your result is the smallest in lexicographical order among all possible results.</p>
+<p><strong>Example</strong>:<br>Given <code>&quot;bcabc&quot;</code><br>Return <code>&quot;abc&quot;</code></p>
+<p>Given <code>&quot;cbacdcbc&quot;</code><br>Return <code>&quot;acdb&quot;</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(n)</span></span><br><span class="line"><span class="comment"># Space: O(k), k is size of the alphabet</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeDuplicateLetters</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type s: str</span><br><span class="line">        :rtype: str</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">            <span class="keyword">return</span> s</span><br><span class="line">        visit = [<span class="number">0</span>] * <span class="number">26</span></span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> s:</span><br><span class="line">            visit[ord(c) - ord(<span class="string">'a'</span>)] += <span class="number">1</span></span><br><span class="line">        stack, stk_set = [], set()</span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> s:</span><br><span class="line">            visit[ord(c) - ord(<span class="string">'a'</span>)] -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> c <span class="keyword">in</span> stack:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">while</span> stack <span class="keyword">and</span> c &lt; stack[-<span class="number">1</span>] <span class="keyword">and</span> visit[ord(stack[-<span class="number">1</span>]) - ord(<span class="string">'a'</span>)] &gt; <span class="number">0</span>:</span><br><span class="line">                stk_set.discard(stack.pop())</span><br><span class="line">            stack.append(c)</span><br><span class="line">            stk_set.add(c)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>.join(stack)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/10/remove-duplicate-letters/" data-id="ciocl7of40012bpqj1b4adsre" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-maximum-product-of-word-lengths" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/10/maximum-product-of-word-lengths/" class="article-date">
@@ -92,7 +134,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/10/maximum-product-of-word-lengths/" data-id="ciobl1bs1001haho9a0dyg8ud" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/10/maximum-product-of-word-lengths/" data-id="ciocl7off001kbpqjl0yotikf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -135,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/10/coin-change/" data-id="ciobl1bso002kaho9pwj4hbsx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/10/coin-change/" data-id="ciocl7og0002nbpqjx8i6zh6x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -178,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/create-maximum-number/" data-id="ciobl1bsi002baho97cgntbc5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/create-maximum-number/" data-id="ciocl7ofw002ebpqjx03wxhom" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -221,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/wiggle-sort-ii/" data-id="ciobl1bpl0008aho96f006oop" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/wiggle-sort-ii/" data-id="ciocl7ocv0008bpqjr511szh4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -265,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/self-crossing/" data-id="ciobl1brk000qaho9iz9gte7n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/self-crossing/" data-id="ciocl7oex000tbpqjdedo5boh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -306,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/palindrome-pairs/" data-id="ciobl1brw0018aho9iekx8x2w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/palindrome-pairs/" data-id="ciocl7of8001bbpqjmujae215" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -349,7 +391,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/count-of-range-sum/" data-id="ciobl1bsj002eaho98vejdi2p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/count-of-range-sum/" data-id="ciocl7ofy002hbpqj0j1wotfe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -394,7 +436,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/patching-array/" data-id="ciobl1bru0015aho9u3jsf4jf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/patching-array/" data-id="ciocl7of60018bpqjoy35nctm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -443,50 +485,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/verify-preorder-serialization-of-a-binary-tree/" data-id="ciobl1bpo000baho9t4u58nuc" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-house-robber-iii" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/09/house-robber-iii/" class="article-date">
-  <time datetime="2016-05-08T16:32:57.000Z" itemprop="datePublished">2016-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/09/house-robber-iii/">337. House Robber III</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>The thief has found himself a new place for his thievery again. There is only one entrance to this area, called the “root.” Besides the root, each house has one and only one parent house. After a tour, the smart thief realized that “all houses in this place forms a binary tree”. It will automatically contact the police if two directly-linked houses were broken into on the same night.</p>
-<p>Determine the maximum amount of money the thief can rob tonight without alerting the police.</p>
-<p>Example 1:<br>     <code>3</code><br>    / \<br>   2   3<br>    \   \<br>    <code>3</code>  <code>1</code><br>Maximum amount of money the thief can rob = <code>3</code> + <code>3</code> + <code>1</code> = 7.<br>Example 2:<br>     3<br>    / \<br>  <code>4</code> <code>5</code><br>  / \   \<br> 1   3   1<br>Maximum amount of money the thief can rob = <code>4</code> + <code>5</code> = 9.</p>
-<p>思路:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rob</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type root: TreeNode</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">rob_node</span><span class="params">(root)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">                <span class="keyword">return</span> (<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">            left, right = rob_node(root.left), rob_node(root.right)</span><br><span class="line">            <span class="keyword">return</span> (root.val + left[<span class="number">1</span>] + right[<span class="number">1</span>], max(left) + max(right))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max(rob_node(root))</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/house-robber-iii/" data-id="ciobl1bsb0022aho9itqdsewo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/verify-preorder-serialization-of-a-binary-tree/" data-id="ciocl7ocz000bbpqjw93fx2p0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -513,7 +512,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">33</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">34</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">34</span></li></ul>
     </div>
   </div>
 
@@ -531,7 +530,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">33</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">34</span></li></ul>
     </div>
   </div>
 
@@ -541,6 +540,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/05/18/ugly-number-ii/">264. Ugly Number II</a>
+          </li>
         
           <li>
             <a href="/2016/05/17/different-ways-to-add-parentheses/">241. Different Ways to Add Parentheses</a>
@@ -556,10 +559,6 @@
         
           <li>
             <a href="/2016/05/16/kth-smallest-element-in-a-bst/">230. Kth Smallest Element in a BST</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/15/word-search-ii/">212. Word Search II</a>
           </li>
         
       </ul>

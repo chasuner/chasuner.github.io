@@ -61,6 +61,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ugly-number-ii" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/18/ugly-number-ii/" class="article-date">
+  <time datetime="2016-05-18T05:19:10.000Z" itemprop="datePublished">2016-05-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/18/ugly-number-ii/">264. Ugly Number II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Write a program to find the <code>n</code>-th ugly number.</p>
+<p>Ugly numbers are positive numbers whose prime factors only include <code>2, 3, 5</code>. For example, <code>1, 2, 3, 4, 5, 6, 8, 9, 10, 12</code> is the sequence of the first <code>10</code> ugly numbers.</p>
+<p>Note that 1 is typically treated as an ugly number.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(n)</span></span><br><span class="line"><span class="comment"># Space: O(1)</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">nthUglyNumber</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type n: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        dp = [<span class="number">0</span>] * n</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">        p1, p2, p3 = <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">1</span>, n):</span><br><span class="line">            num = min(dp[p1] * <span class="number">2</span>, dp[p2] * <span class="number">3</span>, dp[p3] * <span class="number">5</span>)</span><br><span class="line">            dp[i] = num</span><br><span class="line">            <span class="keyword">if</span> num == dp[p1] * <span class="number">2</span>:</span><br><span class="line">                p1 += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> num == dp[p2] * <span class="number">3</span>:</span><br><span class="line">                p2 += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> num == dp[p3] * <span class="number">5</span>:</span><br><span class="line">                p3 += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> dp[n - <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/18/ugly-number-ii/" data-id="ciocl7od1000ebpqjl81zvpy4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-different-ways-to-add-parentheses" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/17/different-ways-to-add-parentheses/" class="article-date">
@@ -93,7 +135,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/17/different-ways-to-add-parentheses/" data-id="ciobl1bsd0025aho99fvi3nvb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/17/different-ways-to-add-parentheses/" data-id="ciocl7ofs0028bpqjqedcvas6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -137,7 +179,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/16/basic-calculator-ii/" data-id="ciobl1bp80000aho9refa689w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/16/basic-calculator-ii/" data-id="ciocl7och0000bpqjr2h8onki" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -181,7 +223,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/16/basic-calculator/" data-id="ciobl1bsr002qaho9cyldplan" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/16/basic-calculator/" data-id="ciocl7og4002tbpqjckdl5bs1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -223,7 +265,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/16/kth-smallest-element-in-a-bst/" data-id="ciobl1bs8001waho99isuakus" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/16/kth-smallest-element-in-a-bst/" data-id="ciocl7ofn001zbpqj3e7lwyrc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -266,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/15/word-search-ii/" data-id="ciobl1bpi0005aho9vaaz9y0u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/15/word-search-ii/" data-id="ciocl7ocs0005bpqjfc7s043g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -308,7 +350,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/14/kth-largest-element-in-an-array/" data-id="ciobl1bsa001zaho96s5jllj3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/14/kth-largest-element-in-an-array/" data-id="ciocl7ofo0022bpqjupg3iacd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -349,7 +391,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/13/missing-ranges/" data-id="ciobl1bry001baho9fmqggm46" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/13/missing-ranges/" data-id="ciocl7ofc001ebpqj8drjrvf6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -392,7 +434,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/single-number-iii/" data-id="ciobl1bqz000kaho9a74zjbn7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/single-number-iii/" data-id="ciocl7oet000nbpqjdo8taag7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -432,51 +474,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/contains-duplicate-iii/" data-id="ciobl1bsm002haho9yrwxej6l" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-sliding-window-maximum" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/12/sliding-window-maximum/" class="article-date">
-  <time datetime="2016-05-12T08:34:53.000Z" itemprop="datePublished">2016-05-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/12/sliding-window-maximum/">239. Sliding Window Maximum</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given an array nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.</p>
-<p>For example,<br>Given nums = <code>[1,3,-1,-3,5,3,6,7]</code>, and k = 3.<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Window <span class="attribute">position</span>                Max</span><br><span class="line">---------------               -----</span><br><span class="line"><span class="attr_selector">[1  3  -1]</span> -3  5  3  6  7       3</span><br><span class="line"> 1 <span class="attr_selector">[3  -1  -3]</span> 5  3  6  7       3</span><br><span class="line"> 1  3 <span class="attr_selector">[-1  -3  5]</span> 3  6  7       5</span><br><span class="line"> 1  3  -1 <span class="attr_selector">[-3  5  3]</span> 6  7       5</span><br><span class="line"> 1  3  -1  -3 <span class="attr_selector">[5  3  6]</span> 7       6</span><br><span class="line"> 1  3  -1  -3  5 <span class="attr_selector">[3  6  7]</span>      7</span><br></pre></td></tr></table></figure></p>
-<p>Therefore, return the max sliding window as <code>[3,3,5,5,6,7]</code>.</p>
-<p>Note:<br>You may assume k is always valid, ie: 1 ≤ k ≤ input array’s size for non-empty array.</p>
-<p>Follow up:<br>Could you solve it in linear time?</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(n)</span></span><br><span class="line"><span class="comment"># Space: O(k)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxSlidingWindow</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br><span class="line">        res = []</span><br><span class="line">        queue = collections.deque()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(k):</span><br><span class="line">            <span class="keyword">while</span> queue <span class="keyword">and</span> nums[i] &gt;= nums[queue[-<span class="number">1</span>]]:</span><br><span class="line">                queue.pop()</span><br><span class="line">            queue.append(i)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(k, len(nums)):</span><br><span class="line">            res.append(nums[queue[<span class="number">0</span>]])</span><br><span class="line">            <span class="keyword">while</span> queue <span class="keyword">and</span> nums[i] &gt;= nums[queue[-<span class="number">1</span>]]:</span><br><span class="line">                queue.pop()</span><br><span class="line">            <span class="keyword">while</span> queue <span class="keyword">and</span> queue[<span class="number">0</span>] &lt;= i - k:</span><br><span class="line">                queue.popleft()</span><br><span class="line">            queue.append(i)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> queue:</span><br><span class="line">            res.append(nums[queue[<span class="number">0</span>]])</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/sliding-window-maximum/" data-id="ciobl1bpw000haho92y9ha97a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/contains-duplicate-iii/" data-id="ciocl7ofz002kbpqjv1y3qfrs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -503,7 +501,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">33</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">34</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">34</span></li></ul>
     </div>
   </div>
 
@@ -521,7 +519,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">33</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">34</span></li></ul>
     </div>
   </div>
 
@@ -531,6 +529,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/05/18/ugly-number-ii/">264. Ugly Number II</a>
+          </li>
         
           <li>
             <a href="/2016/05/17/different-ways-to-add-parentheses/">241. Different Ways to Add Parentheses</a>
@@ -546,10 +548,6 @@
         
           <li>
             <a href="/2016/05/16/kth-smallest-element-in-a-bst/">230. Kth Smallest Element in a BST</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/15/word-search-ii/">212. Word Search II</a>
           </li>
         
       </ul>

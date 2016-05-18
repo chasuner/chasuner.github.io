@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>312. Burst Balloons | Hexo</title>
+  <title>264. Ugly Number II | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons. If the you burst balloon i you will get nums[le">
+  <meta name="description" content="Write a program to find the n-th ugly number.
+Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. For example, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ug">
 <meta property="og:type" content="article">
-<meta property="og:title" content="312. Burst Balloons">
-<meta property="og:url" content="http://yoursite.com/2016/05/10/burst-balloons/index.html">
+<meta property="og:title" content="264. Ugly Number II">
+<meta property="og:url" content="http://yoursite.com/2016/05/18/ugly-number-ii/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons. If the you burst balloon i you will get nums[le">
+<meta property="og:description" content="Write a program to find the n-th ugly number.
+Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. For example, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ug">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="312. Burst Balloons">
-<meta name="twitter:description" content="Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons. If the you burst balloon i you will get nums[le">
+<meta name="twitter:title" content="264. Ugly Number II">
+<meta name="twitter:description" content="Write a program to find the n-th ugly number.
+Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. For example, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ug">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,10 +62,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-burst-balloons" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-ugly-number-ii" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/10/burst-balloons/" class="article-date">
-  <time datetime="2016-05-10T07:38:05.000Z" itemprop="datePublished">2016-05-10</time>
+    <a href="/2016/05/18/ugly-number-ii/" class="article-date">
+  <time datetime="2016-05-18T05:19:10.000Z" itemprop="datePublished">2016-05-18</time>
 </a>
     
   </div>
@@ -73,7 +76,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      312. Burst Balloons
+      264. Ugly Number II
     </h1>
   
 
@@ -81,18 +84,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Given n balloons, indexed from <code>0</code> to <code>n-1</code>. Each balloon is painted with a number on it represented by array <code>nums</code>. You are asked to burst all the balloons. If the you burst balloon <code>i</code> you will get <code>nums[left] * nums[i] * nums[right]</code> coins. Here <code>left</code> and <code>right</code> are adjacent indices of i. After the burst, the left and right then becomes adjacent.</p>
-<p>Find the maximum coins you can collect by bursting the balloons wisely.</p>
-<p>Note:<br>(1) You may imagine <code>nums[-1] = nums[n] = 1</code>. They are not real therefore you can not burst them.<br>(2) 0 ≤ <code>n</code> ≤ 500, 0 ≤ <code>nums[i]</code> ≤ 100</p>
-<p>Example:</p>
-<p>Given <code>[3, 1, 5, 8]</code></p>
-<p>Return <code>167</code><br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> nums = [3,1,5,8] --&gt; [3,5,8] --&gt;   [3,8]   --&gt;  [8]  --&gt; []</span><br><span class="line">coins =  3<span class="keyword">*</span>1<span class="keyword">*</span>5      +  3<span class="keyword">*</span>5<span class="keyword">*</span>8    +  1<span class="keyword">*</span>3<span class="keyword">*</span>8      + 1<span class="keyword">*</span>8<span class="keyword">*</span>1   = 167</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxCoins</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br></pre></td></tr></table></figure>
+        <p>Write a program to find the <code>n</code>-th ugly number.</p>
+<p>Ugly numbers are positive numbers whose prime factors only include <code>2, 3, 5</code>. For example, <code>1, 2, 3, 4, 5, 6, 8, 9, 10, 12</code> is the sequence of the first <code>10</code> ugly numbers.</p>
+<p>Note that 1 is typically treated as an ugly number.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(n)</span></span><br><span class="line"><span class="comment"># Space: O(1)</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">nthUglyNumber</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type n: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        dp = [<span class="number">0</span>] * n</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">        p1, p2, p3 = <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">1</span>, n):</span><br><span class="line">            num = min(dp[p1] * <span class="number">2</span>, dp[p2] * <span class="number">3</span>, dp[p3] * <span class="number">5</span>)</span><br><span class="line">            dp[i] = num</span><br><span class="line">            <span class="keyword">if</span> num == dp[p1] * <span class="number">2</span>:</span><br><span class="line">                p1 += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> num == dp[p2] * <span class="number">3</span>:</span><br><span class="line">                p2 += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> num == dp[p3] * <span class="number">5</span>:</span><br><span class="line">                p3 += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> dp[n - <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/10/burst-balloons/" data-id="ciocl7og2002qbpqj701no2hu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/18/ugly-number-ii/" data-id="ciocl7od1000ebpqjl81zvpy4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -103,19 +103,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/05/10/minimum-height-trees/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          310. Minimum Height Trees
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/05/10/remove-duplicate-letters/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/05/17/different-ways-to-add-parentheses/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">316. Remove Duplicate Letters</div>
+      <div class="article-nav-title">241. Different Ways to Add Parentheses</div>
     </a>
   
 </nav>
