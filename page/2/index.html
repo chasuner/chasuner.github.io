@@ -61,6 +61,130 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-missing-ranges" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/13/missing-ranges/" class="article-date">
+  <time datetime="2016-05-12T16:27:40.000Z" itemprop="datePublished">2016-05-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/13/missing-ranges/">163. Missing Ranges</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given a sorted integer array where the range of elements are [lower, upper] inclusive, return its missing ranges.</p>
+<p>For example, given <code>[0, 1, 3, 50, 75]</code>, lower = 0 and upper = 99, return <code>[&quot;2&quot;, &quot;4-&gt;49&quot;, &quot;51-&gt;74&quot;, &quot;76-&gt;99&quot;]</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(n)</span></span><br><span class="line"><span class="comment"># Space: O(1)</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMissingRanges</span><span class="params">(self, nums, lower, upper)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type lower: int</span><br><span class="line">        :type upper: int</span><br><span class="line">        :rtype: List[str]</span><br><span class="line">        """</span></span><br><span class="line">        res = []</span><br><span class="line">        pre = lower - <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(nums) + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> i == len(nums):</span><br><span class="line">                cur = upper + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cur = nums[i]</span><br><span class="line">            <span class="keyword">if</span> cur - pre &gt; <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">if</span> cur - pre == <span class="number">2</span>:</span><br><span class="line">                    s = str(pre + <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    s = <span class="string">'%s-&gt;%s'</span> % (pre + <span class="number">1</span>, cur - <span class="number">1</span>)</span><br><span class="line">                res.append(s)</span><br><span class="line">            pre = cur</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/13/missing-ranges/" data-id="ciocud2bh001hx8o9zp325gxp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-single-number-iii" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/12/single-number-iii/" class="article-date">
+  <time datetime="2016-05-12T15:48:04.000Z" itemprop="datePublished">2016-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/12/single-number-iii/">260. Single Number III</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given an array of numbers <code>nums</code>, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once.</p>
+<p>For example:</p>
+<p>Given <code>nums = [1, 2, 1, 3, 2, 5]</code>, return <code>[3, 5]</code>.</p>
+<p>Note:<br>The order of the result is not important. So in the above example, <code>[5, 3]</code> is also correct.<br>Your algorithm should run in linear runtime complexity. Could you implement it using only constant space complexity?</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(n)</span></span><br><span class="line"><span class="comment"># Space: O(1)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> operator</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">singleNumber</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br><span class="line">        a = reduce(operator.xor, nums)</span><br><span class="line">        b = a &amp; ~(a - <span class="number">1</span>)</span><br><span class="line">        x = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> b &amp; n:</span><br><span class="line">                x ^= n</span><br><span class="line">        <span class="keyword">return</span> [x, x ^ a]</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/12/single-number-iii/" data-id="ciocud2b1000qx8o937aummdl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-contains-duplicate-iii" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/12/contains-duplicate-iii/" class="article-date">
+  <time datetime="2016-05-12T09:07:26.000Z" itemprop="datePublished">2016-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/12/contains-duplicate-iii/">220. Contains Duplicate III</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given an array of integers, find out whether there are two distinct indices i and j in the array such that the difference between <code>nums[i]</code> and <code>nums[j]</code> is at most t and the difference between i and j is at most k.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/12/contains-duplicate-iii/" data-id="ciocud2c7002tx8o9tz0thp24" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-sliding-window-maximum" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/12/sliding-window-maximum/" class="article-date">
@@ -93,7 +217,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/sliding-window-maximum/" data-id="ciocl7oe7000kbpqjngszi4qp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/sliding-window-maximum/" data-id="ciocud2b0000nx8o9ir3283kw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -133,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/majority-element-ii/" data-id="ciocl7ofh001nbpqjvoxcq2pu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/majority-element-ii/" data-id="ciocud2bn001tx8o9hjj8hnh7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -180,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/search-a-2d-matrix-ii/" data-id="ciocl7of0000wbpqjsfo690qb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/search-a-2d-matrix-ii/" data-id="ciocud2b6000zx8o9b7tgpc6v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -223,7 +347,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/serialize-and-deserialize-binary-tree/" data-id="ciocl7oew000qbpqj409l31er" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/serialize-and-deserialize-binary-tree/" data-id="ciocud2b3000tx8o9lzm0la11" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -266,7 +390,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/longest-increasing-subsequence/" data-id="ciocl7ofm001wbpqjq01w1yr8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/longest-increasing-subsequence/" data-id="ciocud2br0022x8o9k8yat980" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -309,7 +433,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/11/range-sum-query-2d-immutable/" data-id="ciocl7of50015bpqjr5eo4vre" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/11/range-sum-query-2d-immutable/" data-id="ciocud2bb0018x8o94dhqshrg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -352,142 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/11/lowest-common-ancestor-of-a-binary-tree/" data-id="ciocl7ofi001qbpqjtvuza7ji" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-remove-invalid-parentheses" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/11/remove-invalid-parentheses/" class="article-date">
-  <time datetime="2016-05-11T08:43:17.000Z" itemprop="datePublished">2016-05-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/11/remove-invalid-parentheses/">301. Remove Invalid Parentheses</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Remove the minimum number of invalid parentheses in order to make the input string valid. Return all possible results.</p>
-<p>Note: The input string may contain letters other than the parentheses ( and ).</p>
-<p><strong>Examples</strong>:<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"()())()"</span> -&gt; [<span class="string">"()()()"</span>, <span class="string">"(())()"</span>]</span><br><span class="line"><span class="string">"(a)())()"</span> -&gt; [<span class="string">"(a)()()"</span>, <span class="string">"(a())()"</span>]</span><br><span class="line"><span class="string">")("</span> -&gt; [<span class="string">""</span>]</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeInvalidParentheses</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type s: str</span><br><span class="line">        :rtype: List[str]</span><br><span class="line">        """</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/11/remove-invalid-parentheses/" data-id="ciocl7of2000zbpqj7geq86z0" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-minimum-height-trees" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/10/minimum-height-trees/" class="article-date">
-  <time datetime="2016-05-10T07:43:50.000Z" itemprop="datePublished">2016-05-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/10/minimum-height-trees/">310. Minimum Height Trees</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>For a undirected graph with tree characteristics, we can choose any node as the root. The result graph is then a rooted tree. Among all possible rooted trees, those with minimum height are called minimum height trees (MHTs). Given such a graph, write a function to find all the MHTs and return a list of their root labels.</p>
-<p><strong>Format</strong><br>The graph contains <code>n</code> nodes which are labeled from <code>0</code> to <code>n - 1</code>. You will be given the number <code>n</code> and a list of undirected <code>edges</code> (each edge is a pair of labels).</p>
-<p>You can assume that no duplicate <code>edges</code> will appear in edges. Since all edges are undirected, <code>[0, 1]</code> is the same as <code>[1, 0]</code> and thus will not appear together in <code>edges</code>.</p>
-<p><strong>Example 1:</strong></p>
-<p>Given <code>n = 4</code>, <code>edges = [[1, 0], [1, 2], [1, 3]]</code><br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="number">0</span></span><br><span class="line">  <span class="string">|</span></span><br><span class="line">  <span class="number">1</span></span><br><span class="line"> / \</span><br><span class="line"><span class="number">2</span>   <span class="number">3</span></span><br></pre></td></tr></table></figure></p>
-<p>return <code>[1]</code></p>
-<p><strong>Example 2:</strong></p>
-<p>Given <code>n = 6</code>, <code>edges = [[0, 3], [1, 3], [2, 3], [4, 3], [5, 4]]</code><br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span></span><br><span class="line"> \ <span class="string">| /</span></span><br><span class="line">   <span class="number">3</span></span><br><span class="line">   <span class="string">|</span></span><br><span class="line">   <span class="number">4</span></span><br><span class="line">   <span class="string">|</span></span><br><span class="line">   <span class="number">5</span></span><br></pre></td></tr></table></figure></p>
-<p>return <code>[3, 4]</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(n)</span></span><br><span class="line"><span class="comment"># Space: O(n)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMinHeightTrees</span><span class="params">(self, n, edges)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type n: int</span><br><span class="line">        :type edges: List[List[int]]</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> [<span class="number">0</span>]</span><br><span class="line">        graph = collections.defaultdict(set)</span><br><span class="line">        unvisited = set()</span><br><span class="line">        <span class="keyword">for</span> i, j <span class="keyword">in</span> edges:</span><br><span class="line">            graph[i].add(j)</span><br><span class="line">            graph[j].add(i)</span><br><span class="line">        pre_level = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n):</span><br><span class="line">            <span class="keyword">if</span> len(graph[i]) == <span class="number">1</span>:</span><br><span class="line">                pre_level.append(i)</span><br><span class="line">            unvisited.add(i)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> len(unvisited) &gt; <span class="number">2</span>:</span><br><span class="line">            cur_level = []</span><br><span class="line">            <span class="keyword">for</span> u <span class="keyword">in</span> pre_level:</span><br><span class="line">                unvisited.discard(u)</span><br><span class="line">                <span class="keyword">for</span> v <span class="keyword">in</span> graph[u]:</span><br><span class="line">                    <span class="keyword">if</span> v <span class="keyword">in</span> unvisited:</span><br><span class="line">                        graph[v].discard(u)</span><br><span class="line">                        <span class="keyword">if</span> len(graph[v]) == <span class="number">1</span>:</span><br><span class="line">                            cur_level.append(v)</span><br><span class="line">            pre_level = cur_level</span><br><span class="line">        <span class="keyword">return</span> pre_level</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/10/minimum-height-trees/" data-id="ciocl7ofe001hbpqjza23eccs" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-burst-balloons" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/10/burst-balloons/" class="article-date">
-  <time datetime="2016-05-10T07:38:05.000Z" itemprop="datePublished">2016-05-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/10/burst-balloons/">312. Burst Balloons</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given n balloons, indexed from <code>0</code> to <code>n-1</code>. Each balloon is painted with a number on it represented by array <code>nums</code>. You are asked to burst all the balloons. If the you burst balloon <code>i</code> you will get <code>nums[left] * nums[i] * nums[right]</code> coins. Here <code>left</code> and <code>right</code> are adjacent indices of i. After the burst, the left and right then becomes adjacent.</p>
-<p>Find the maximum coins you can collect by bursting the balloons wisely.</p>
-<p>Note:<br>(1) You may imagine <code>nums[-1] = nums[n] = 1</code>. They are not real therefore you can not burst them.<br>(2) 0 ≤ <code>n</code> ≤ 500, 0 ≤ <code>nums[i]</code> ≤ 100</p>
-<p>Example:</p>
-<p>Given <code>[3, 1, 5, 8]</code></p>
-<p>Return <code>167</code><br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> nums = [3,1,5,8] --&gt; [3,5,8] --&gt;   [3,8]   --&gt;  [8]  --&gt; []</span><br><span class="line">coins =  3<span class="keyword">*</span>1<span class="keyword">*</span>5      +  3<span class="keyword">*</span>5<span class="keyword">*</span>8    +  1<span class="keyword">*</span>3<span class="keyword">*</span>8      + 1<span class="keyword">*</span>8<span class="keyword">*</span>1   = 167</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxCoins</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/10/burst-balloons/" data-id="ciocl7og2002qbpqj701no2hu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/11/lowest-common-ancestor-of-a-binary-tree/" data-id="ciocud2bp001wx8o9b4jeg17u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -514,7 +503,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">34</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">34</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">37</span></li></ul>
     </div>
   </div>
 
@@ -532,7 +521,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">34</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">37</span></li></ul>
     </div>
   </div>
 
@@ -544,23 +533,23 @@
       <ul>
         
           <li>
+            <a href="/2016/05/18/merge-k-sorted-lists/">23. Merge k Sorted Lists</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/18/find-median-from-data-stream/">295. Find Median from Data Stream</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/18/super-ugly-number/">super-ugly-number</a>
+          </li>
+        
+          <li>
             <a href="/2016/05/18/ugly-number-ii/">264. Ugly Number II</a>
           </li>
         
           <li>
             <a href="/2016/05/17/different-ways-to-add-parentheses/">241. Different Ways to Add Parentheses</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/16/basic-calculator-ii/">227. Basic Calculator II</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/16/basic-calculator/">224. Basic Calculator</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/16/kth-smallest-element-in-a-bst/">230. Kth Smallest Element in a BST</a>
           </li>
         
       </ul>
