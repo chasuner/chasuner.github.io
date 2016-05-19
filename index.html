@@ -61,6 +61,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-lru-cache" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/19/lru-cache/" class="article-date">
+  <time datetime="2016-05-19T13:13:39.000Z" itemprop="datePublished">2016-05-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/19/lru-cache/">146. LRU Cache</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: <code>get</code> and <code>set</code>.</p>
+<p><code>get(key)</code> - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.<br><code>set(key, value)</code> - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, capacity)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type capacity: int</span><br><span class="line">        """</span></span><br><span class="line">        self.cache = collections.OrderedDict()</span><br><span class="line">        self.capacity = capacity</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, key)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> key <span class="keyword">not</span> <span class="keyword">in</span> self.cache:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">        val = self.cache[key]</span><br><span class="line">        <span class="keyword">del</span> self.cache[key]</span><br><span class="line">        self.cache[key] = val</span><br><span class="line">        <span class="keyword">return</span> val</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set</span><span class="params">(self, key, value)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type key: int</span><br><span class="line">        :type value: int</span><br><span class="line">        :rtype: nothing</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> key <span class="keyword">in</span> self.cache:</span><br><span class="line">            <span class="keyword">del</span> self.cache[key]</span><br><span class="line">        <span class="keyword">elif</span> len(self.cache) == self.capacity:</span><br><span class="line">            self.cache.popitem(last=<span class="keyword">False</span>)</span><br><span class="line">        self.cache[key] = value</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/19/lru-cache/" data-id="cioeckvjx001wpeo9xeb53o4d" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-merge-k-sorted-lists" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/18/merge-k-sorted-lists/" class="article-date">
@@ -89,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/18/merge-k-sorted-lists/" data-id="ciocud2bk001nx8o917leoofh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/18/merge-k-sorted-lists/" data-id="cioeckvjs001npeo906y8xuku" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -134,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/18/find-median-from-data-stream/" data-id="ciocud2by002ex8o9x7zlpo63" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/18/find-median-from-data-stream/" data-id="cioeckvk9002hpeo9buydy2s1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -176,7 +217,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/18/super-ugly-number/" data-id="ciocud2ay000kx8o97flkrmlo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/18/super-ugly-number/" data-id="cioeckviy000kpeo9p7777qel" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -218,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/18/ugly-number-ii/" data-id="ciocud2am000ex8o973uuj5a6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/18/ugly-number-ii/" data-id="cioeckvhg000epeo90kq38vrz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -262,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/17/different-ways-to-add-parentheses/" data-id="ciocud2c1002hx8o9935zvan5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/17/different-ways-to-add-parentheses/" data-id="cioeckvka002kpeo9g6pn0b2t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -306,7 +347,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/16/basic-calculator-ii/" data-id="ciocud28q0000x8o9wjdo36np" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/16/basic-calculator-ii/" data-id="cioeckvgy0000peo9dsterhfn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -350,7 +391,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/16/basic-calculator/" data-id="ciocud2cc0032x8o9nf47n6b5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/16/basic-calculator/" data-id="cioeckvkm0035peo9w2xuybo8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -392,7 +433,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/16/kth-smallest-element-in-a-bst/" data-id="ciocud2bt0025x8o96nxbxesw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/16/kth-smallest-element-in-a-bst/" data-id="cioeckvk40028peo9fjxxxswd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -435,49 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/15/word-search-ii/" data-id="ciocud28z0005x8o9t49d07dr" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-kth-largest-element-in-an-array" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/14/kth-largest-element-in-an-array/" class="article-date">
-  <time datetime="2016-05-14T13:55:56.000Z" itemprop="datePublished">2016-05-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/14/kth-largest-element-in-an-array/">215. Kth Largest Element in an Array</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.</p>
-<p>For example,<br>Given <code>[3,2,1,5,6,4]</code> and k = 2, return 5.</p>
-<p>Note:<br>You may assume k is always valid, 1 ≤ k ≤ array’s length.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  O(n) ~ O(n^2)</span></span><br><span class="line"><span class="comment"># Space: O(1)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findKthLargest</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">partition</span><span class="params">(nums, left, right, k)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> left &gt; right:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            pivot_idx = random.randint(left, right)</span><br><span class="line">            nums[left], nums[pivot_idx] = nums[pivot_idx], nums[left]</span><br><span class="line">            pivot = nums[left]</span><br><span class="line">            lp, rp = left, right</span><br><span class="line">            <span class="keyword">while</span> lp &lt; rp:</span><br><span class="line">                <span class="keyword">while</span> lp &lt; rp <span class="keyword">and</span> nums[rp] &gt;= pivot:</span><br><span class="line">                    rp -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">while</span> lp &lt; rp <span class="keyword">and</span> nums[lp] &lt;= pivot:</span><br><span class="line">                    lp += <span class="number">1</span></span><br><span class="line">                nums[lp], nums[rp] = nums[rp], nums[lp]</span><br><span class="line">            nums[left], nums[lp] = nums[lp], nums[left]</span><br><span class="line">            <span class="keyword">if</span> right - lp + <span class="number">1</span> == k:</span><br><span class="line">                <span class="keyword">return</span> nums[lp]</span><br><span class="line">            <span class="keyword">if</span> right - lp + <span class="number">1</span> &gt; k:</span><br><span class="line">                <span class="keyword">return</span> partition(nums, lp + <span class="number">1</span>, right, k)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> partition(nums, left, lp - <span class="number">1</span>, k - right + lp - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> partition(nums, <span class="number">0</span>, len(nums) - <span class="number">1</span>, k)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/14/kth-largest-element-in-an-array/" data-id="ciocud2bv0028x8o9lack04s2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/15/word-search-ii/" data-id="cioeckvh80005peo9t390pdo1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -504,7 +503,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">37</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">38</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">38</span></li></ul>
     </div>
   </div>
 
@@ -522,7 +521,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">37</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">38</span></li></ul>
     </div>
   </div>
 
@@ -532,6 +531,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/05/19/lru-cache/">146. LRU Cache</a>
+          </li>
         
           <li>
             <a href="/2016/05/18/merge-k-sorted-lists/">23. Merge k Sorted Lists</a>
@@ -547,10 +550,6 @@
         
           <li>
             <a href="/2016/05/18/ugly-number-ii/">264. Ugly Number II</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/17/different-ways-to-add-parentheses/">241. Different Ways to Add Parentheses</a>
           </li>
         
       </ul>
