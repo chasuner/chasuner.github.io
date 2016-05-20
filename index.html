@@ -61,6 +61,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-moving-average-from-data-stream" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/20/moving-average-from-data-stream/" class="article-date">
+  <time datetime="2016-05-20T15:03:38.000Z" itemprop="datePublished">2016-05-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/20/moving-average-from-data-stream/">346. Moving Average from Data Stream</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given a stream of integers and a window size, calculate the moving average of all integers in the sliding window.</p>
+<p>For example,<br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MovingAverage m = <span class="keyword">new</span> MovingAverage(<span class="number">3</span>);</span><br><span class="line">m.<span class="keyword">next</span>(<span class="number">1</span>) = <span class="number">1</span></span><br><span class="line">m.<span class="keyword">next</span>(<span class="number">10</span>) = (<span class="number">1</span> + <span class="number">10</span>) / <span class="number">2</span></span><br><span class="line">m.<span class="keyword">next</span>(<span class="number">3</span>) = (<span class="number">1</span> + <span class="number">10</span> + <span class="number">3</span>) / <span class="number">3</span></span><br><span class="line">m.<span class="keyword">next</span>(<span class="number">5</span>) = (<span class="number">10</span> + <span class="number">3</span> + <span class="number">5</span>) / <span class="number">3</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Time:  O(1)</span></span><br><span class="line"><span class="comment"># Space: O(w)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MovingAverage</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, size)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        Initialize your data structure here.</span><br><span class="line">        :type size: int</span><br><span class="line">        """</span></span><br><span class="line">        self.__size = size</span><br><span class="line">        self.__sum = <span class="number">0</span></span><br><span class="line">        self.__q = deque([])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">next</span><span class="params">(self, val)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type val: int</span><br><span class="line">        :rtype: float</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> len(self.__q) == self.__size:</span><br><span class="line">            self.__sum -= self.__q.popleft()</span><br><span class="line">        self.__sum += val</span><br><span class="line">        self.__q.append(val)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1.0</span> * self.__sum / len(self.__q)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Your MovingAverage object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = MovingAverage(size)</span></span><br><span class="line"><span class="comment"># param_1 = obj.next(val)</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/20/moving-average-from-data-stream/" data-id="ciofv8mqo001hnvo929cpzjup" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-lru-cache" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/19/lru-cache/" class="article-date">
@@ -90,7 +131,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/19/lru-cache/" data-id="cioeckvjx001wpeo9xeb53o4d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/19/lru-cache/" data-id="ciofv8mqz001znvo94jyblf45" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -130,7 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/18/merge-k-sorted-lists/" data-id="cioeckvjs001npeo906y8xuku" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/18/merge-k-sorted-lists/" data-id="ciofv8mqu001qnvo9lksa7xwz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -175,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/18/find-median-from-data-stream/" data-id="cioeckvk9002hpeo9buydy2s1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/18/find-median-from-data-stream/" data-id="ciofv8mrb002knvo9w7gnxkkt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -217,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/18/super-ugly-number/" data-id="cioeckviy000kpeo9p7777qel" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/18/super-ugly-number/" data-id="ciofv8mpz000knvo9n9ybq0r4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -259,7 +300,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/18/ugly-number-ii/" data-id="cioeckvhg000epeo90kq38vrz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/18/ugly-number-ii/" data-id="ciofv8mok000envo9zk61ps3p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -303,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/17/different-ways-to-add-parentheses/" data-id="cioeckvka002kpeo9g6pn0b2t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/17/different-ways-to-add-parentheses/" data-id="ciofv8mrc002nnvo9ytfeudq8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -347,7 +388,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/16/basic-calculator-ii/" data-id="cioeckvgy0000peo9dsterhfn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/16/basic-calculator-ii/" data-id="ciofv8mo10000nvo9rtc0az0g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -391,7 +432,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/16/basic-calculator/" data-id="cioeckvkm0035peo9w2xuybo8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/16/basic-calculator/" data-id="ciofv8mro0038nvo95oct6ajh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -433,50 +474,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/16/kth-smallest-element-in-a-bst/" data-id="cioeckvk40028peo9fjxxxswd" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-word-search-ii" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/15/word-search-ii/" class="article-date">
-  <time datetime="2016-05-15T13:11:38.000Z" itemprop="datePublished">2016-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/15/word-search-ii/">212. Word Search II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given a 2D board and a list of words from the dictionary, find all words in the board.</p>
-<p>Each word must be constructed from letters of sequentially adjacent cell, where “adjacent” cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once in a word.</p>
-<p>For example,<br>Given <strong>words</strong> = <code>[&quot;oath&quot;,&quot;pea&quot;,&quot;eat&quot;,&quot;rain&quot;]</code> and <strong>board</strong> =<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  ['o','a','a','n'],</span><br><span class="line">  ['e','t','a','e'],</span><br><span class="line">  ['i','h','k','r'],</span><br><span class="line">  ['i','f','l','v']</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
-<p>Return [“eat”,”oath”].<br>Note:<br>You may assume that all inputs are consist of lowercase letters a-z.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TrieNode</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.word = <span class="keyword">None</span></span><br><span class="line">        self.leaves = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Trie</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.root = TrieNode()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert</span><span class="params">(self, word)</span>:</span></span><br><span class="line">        cur = self.root</span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> word:</span><br><span class="line">            <span class="keyword">if</span> c <span class="keyword">not</span> <span class="keyword">in</span> cur.leaves:</span><br><span class="line">                cur.leaves[c] = TrieNode()</span><br><span class="line">            cur = cur.leaves[c]</span><br><span class="line">        cur.word = word</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findWords</span><span class="params">(self, board, words)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type board: List[List[str]]</span><br><span class="line">        :type words: List[str]</span><br><span class="line">        :rtype: List[str]</span><br><span class="line">        """</span></span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> board <span class="keyword">or</span> <span class="keyword">not</span> words:</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">find_word</span><span class="params">(board, trie, i, j, visited, res)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> trie <span class="keyword">or</span> visited[i][j] <span class="keyword">or</span> board[i][j] <span class="keyword">not</span> <span class="keyword">in</span> trie.leaves:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            next_trie = trie.leaves[board[i][j]]</span><br><span class="line">            <span class="keyword">if</span> next_trie.word:</span><br><span class="line">                res.append(next_trie.word)</span><br><span class="line">            directions = [[-<span class="number">1</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, -<span class="number">1</span>], [<span class="number">0</span>, <span class="number">1</span>]]</span><br><span class="line">            visited[i][j] = <span class="keyword">True</span></span><br><span class="line">            <span class="keyword">for</span> direction <span class="keyword">in</span> directions:</span><br><span class="line">                x, y = i + direction[<span class="number">0</span>], j + direction[<span class="number">1</span>]</span><br><span class="line">                <span class="keyword">if</span> <span class="number">0</span> &lt;= x &lt; len(board) <span class="keyword">and</span> <span class="number">0</span> &lt;= y &lt; len(board[<span class="number">0</span>]):</span><br><span class="line">                    find_word(board, next_trie, x, y, visited, res)</span><br><span class="line">            visited[i][j] = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">        trie = Trie()</span><br><span class="line">        visited = [[<span class="keyword">False</span> <span class="keyword">for</span> j <span class="keyword">in</span> xrange(len(board[<span class="number">0</span>]))] <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(board))]</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">            trie.insert(word)</span><br><span class="line">        res = set()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(board)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xrange(len(board[<span class="number">0</span>])):</span><br><span class="line">                find_word(board, trie.root, i, j, visited, res)</span><br><span class="line">        res = list(res)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/15/word-search-ii/" data-id="cioeckvh80005peo9t390pdo1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/16/kth-smallest-element-in-a-bst/" data-id="ciofv8mr6002bnvo9y19nnqw0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -503,7 +501,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">38</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">38</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">39</span></li></ul>
     </div>
   </div>
 
@@ -521,7 +519,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">38</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">39</span></li></ul>
     </div>
   </div>
 
@@ -531,6 +529,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/05/20/moving-average-from-data-stream/">346. Moving Average from Data Stream</a>
+          </li>
         
           <li>
             <a href="/2016/05/19/lru-cache/">146. LRU Cache</a>
@@ -546,10 +548,6 @@
         
           <li>
             <a href="/2016/05/18/super-ugly-number/">super-ugly-number</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/18/ugly-number-ii/">264. Ugly Number II</a>
           </li>
         
       </ul>

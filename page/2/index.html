@@ -61,6 +61,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-word-search-ii" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/15/word-search-ii/" class="article-date">
+  <time datetime="2016-05-15T13:11:38.000Z" itemprop="datePublished">2016-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/15/word-search-ii/">212. Word Search II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given a 2D board and a list of words from the dictionary, find all words in the board.</p>
+<p>Each word must be constructed from letters of sequentially adjacent cell, where “adjacent” cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once in a word.</p>
+<p>For example,<br>Given <strong>words</strong> = <code>[&quot;oath&quot;,&quot;pea&quot;,&quot;eat&quot;,&quot;rain&quot;]</code> and <strong>board</strong> =<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  ['o','a','a','n'],</span><br><span class="line">  ['e','t','a','e'],</span><br><span class="line">  ['i','h','k','r'],</span><br><span class="line">  ['i','f','l','v']</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>Return [“eat”,”oath”].<br>Note:<br>You may assume that all inputs are consist of lowercase letters a-z.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TrieNode</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.word = <span class="keyword">None</span></span><br><span class="line">        self.leaves = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Trie</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.root = TrieNode()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert</span><span class="params">(self, word)</span>:</span></span><br><span class="line">        cur = self.root</span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> word:</span><br><span class="line">            <span class="keyword">if</span> c <span class="keyword">not</span> <span class="keyword">in</span> cur.leaves:</span><br><span class="line">                cur.leaves[c] = TrieNode()</span><br><span class="line">            cur = cur.leaves[c]</span><br><span class="line">        cur.word = word</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findWords</span><span class="params">(self, board, words)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type board: List[List[str]]</span><br><span class="line">        :type words: List[str]</span><br><span class="line">        :rtype: List[str]</span><br><span class="line">        """</span></span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> board <span class="keyword">or</span> <span class="keyword">not</span> words:</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">find_word</span><span class="params">(board, trie, i, j, visited, res)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> trie <span class="keyword">or</span> visited[i][j] <span class="keyword">or</span> board[i][j] <span class="keyword">not</span> <span class="keyword">in</span> trie.leaves:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            next_trie = trie.leaves[board[i][j]]</span><br><span class="line">            <span class="keyword">if</span> next_trie.word:</span><br><span class="line">                res.append(next_trie.word)</span><br><span class="line">            directions = [[-<span class="number">1</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, -<span class="number">1</span>], [<span class="number">0</span>, <span class="number">1</span>]]</span><br><span class="line">            visited[i][j] = <span class="keyword">True</span></span><br><span class="line">            <span class="keyword">for</span> direction <span class="keyword">in</span> directions:</span><br><span class="line">                x, y = i + direction[<span class="number">0</span>], j + direction[<span class="number">1</span>]</span><br><span class="line">                <span class="keyword">if</span> <span class="number">0</span> &lt;= x &lt; len(board) <span class="keyword">and</span> <span class="number">0</span> &lt;= y &lt; len(board[<span class="number">0</span>]):</span><br><span class="line">                    find_word(board, next_trie, x, y, visited, res)</span><br><span class="line">            visited[i][j] = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">        trie = Trie()</span><br><span class="line">        visited = [[<span class="keyword">False</span> <span class="keyword">for</span> j <span class="keyword">in</span> xrange(len(board[<span class="number">0</span>]))] <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(board))]</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">            trie.insert(word)</span><br><span class="line">        res = set()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(board)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xrange(len(board[<span class="number">0</span>])):</span><br><span class="line">                find_word(board, trie.root, i, j, visited, res)</span><br><span class="line">        res = list(res)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/15/word-search-ii/" data-id="ciofv8mob0005nvo95hdz63vf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-kth-largest-element-in-an-array" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/14/kth-largest-element-in-an-array/" class="article-date">
@@ -91,7 +134,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/14/kth-largest-element-in-an-array/" data-id="cioeckvk5002bpeo96u3ftvy6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/14/kth-largest-element-in-an-array/" data-id="ciofv8mr7002envo9cxxoibfb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -132,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/13/missing-ranges/" data-id="cioeckvjp001hpeo9qos1lkrq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/13/missing-ranges/" data-id="ciofv8mqq001knvo9689r1hot" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -175,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/single-number-iii/" data-id="cioeckvj8000qpeo9jtk9xvbd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/single-number-iii/" data-id="ciofv8mq9000qnvo94sw0kahd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -215,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/contains-duplicate-iii/" data-id="cioeckvki002wpeo9dac787tg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/contains-duplicate-iii/" data-id="ciofv8mrk002znvo9fyyjm21t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -259,7 +302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/sliding-window-maximum/" data-id="cioeckvj6000npeo9b0bo4ibb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/sliding-window-maximum/" data-id="ciofv8mq7000nnvo9ig9nwdk3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -299,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/majority-element-ii/" data-id="cioeckvju001tpeo9hbebel7j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/majority-element-ii/" data-id="ciofv8mqx001wnvo9zyvduywf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -346,7 +389,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/search-a-2d-matrix-ii/" data-id="cioeckvje000zpeo9s2k9ncas" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/search-a-2d-matrix-ii/" data-id="ciofv8mqf000znvo9fnebgjwy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -389,7 +432,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/serialize-and-deserialize-binary-tree/" data-id="cioeckvja000tpeo9centlesf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/serialize-and-deserialize-binary-tree/" data-id="ciofv8mqb000tnvo9844u06fv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -432,50 +475,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/longest-increasing-subsequence/" data-id="cioeckvk20025peo9iqt3fa46" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-range-sum-query-2d-immutable" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/11/range-sum-query-2d-immutable/" class="article-date">
-  <time datetime="2016-05-11T13:53:05.000Z" itemprop="datePublished">2016-05-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/11/range-sum-query-2d-immutable/">304. Range Sum Query 2D - Immutable</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given a 2D matrix matrix, find the sum of the elements inside the rectangle defined by its upper left corner (row1, col1) and lower right corner (row2, col2).</p>
-<p>Range Sum Query 2D<br>The above rectangle (with the red border) is defined by (row1, col1) = <strong>(2, 1)</strong> and (row2, col2) = <strong>(4, 3)</strong>, which contains sum = <strong>8</strong>.</p>
-<p><strong>Example:</strong><br><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Given matrix = [</span><br><span class="line">  [<span class="number">3</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>],</span><br><span class="line">  [<span class="number">5</span>, <span class="number">6</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>],</span><br><span class="line">  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">5</span>],</span><br><span class="line">  [<span class="number">4</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">7</span>],</span><br><span class="line">  [<span class="number">1</span>, <span class="number">0</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">5</span>]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">sumRegion<span class="function"><span class="params">(<span class="number">2</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>)</span> -&gt;</span> <span class="number">8</span></span><br><span class="line">sumRegion<span class="function"><span class="params">(<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>)</span> -&gt;</span> <span class="number">11</span></span><br><span class="line">sumRegion<span class="function"><span class="params">(<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">4</span>)</span> -&gt;</span> <span class="number">12</span></span><br></pre></td></tr></table></figure></p>
-<p>Note:<br>You may assume that the matrix does not change.<br>There are many calls to sumRegion function.<br>You may assume that row1 ≤ row2 and col1 ≤ col2.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time:  ctor:   O(m * n),</span></span><br><span class="line"><span class="comment">#        lookup: O(1)</span></span><br><span class="line"><span class="comment"># Space: O(m * n)</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NumMatrix</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, matrix)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        initialize your data structure here.</span><br><span class="line">        :type matrix: List[List[int]]</span><br><span class="line">        """</span></span><br><span class="line">        self.matrix = matrix</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> matrix:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        m, n = len(matrix), len(matrix[<span class="number">0</span>])</span><br><span class="line">        self.sums = [[<span class="number">0</span> <span class="keyword">for</span> j <span class="keyword">in</span> xrange(n + <span class="number">1</span>)] <span class="keyword">for</span> i <span class="keyword">in</span> xrange(m + <span class="number">1</span>)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">1</span>, m + <span class="number">1</span>):</span><br><span class="line">            row = [<span class="number">0</span>] * (n + <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xrange(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">                row[j] = row[j - <span class="number">1</span>] + matrix[i - <span class="number">1</span>][j - <span class="number">1</span>]</span><br><span class="line">                self.sums[i][j] = self.sums[i - <span class="number">1</span>][j] + row[j]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sumRegion</span><span class="params">(self, row1, col1, row2, col2)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        sum of elements matrix[(row1,col1)..(row2,col2)], inclusive.</span><br><span class="line">        :type row1: int</span><br><span class="line">        :type col1: int</span><br><span class="line">        :type row2: int</span><br><span class="line">        :type col2: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        res = self.sums[row2 + <span class="number">1</span>][col2 + <span class="number">1</span>] - self.sums[row1][col2 + <span class="number">1</span>] - self.sums[row2 + <span class="number">1</span>][col1] + self.sums[row1][col1]</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Your NumMatrix object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># numMatrix = NumMatrix(matrix)</span></span><br><span class="line"><span class="comment"># numMatrix.sumRegion(0, 1, 2, 3)</span></span><br><span class="line"><span class="comment"># numMatrix.sumRegion(1, 2, 3, 4)</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/11/range-sum-query-2d-immutable/" data-id="cioeckvji0018peo9zy98dm9k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/longest-increasing-subsequence/" data-id="ciofv8mr30028nvo9k95miqzc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -502,7 +502,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">38</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">38</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a><span class="tag-list-count">39</span></li></ul>
     </div>
   </div>
 
@@ -520,7 +520,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">38</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">39</span></li></ul>
     </div>
   </div>
 
@@ -530,6 +530,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/05/20/moving-average-from-data-stream/">346. Moving Average from Data Stream</a>
+          </li>
         
           <li>
             <a href="/2016/05/19/lru-cache/">146. LRU Cache</a>
@@ -545,10 +549,6 @@
         
           <li>
             <a href="/2016/05/18/super-ugly-number/">super-ugly-number</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/18/ugly-number-ii/">264. Ugly Number II</a>
           </li>
         
       </ul>
